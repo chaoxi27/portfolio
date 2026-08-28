@@ -441,7 +441,9 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
         </div>`
       )
       .join("");
-    return `<div class="demo-ancient-list">${cases}</div>`;
+    return `
+      <div class="demo-ancient-note">该项目正在投稿中，仅提供演示版本。</div>
+      <div class="demo-ancient-list">${cases}</div>`;
   }
 
   function runDemo() {
