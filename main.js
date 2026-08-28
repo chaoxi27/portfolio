@@ -74,7 +74,7 @@
       const projects = D.projects.filter((p) => p.group === g.key);
       if (!projects.length) return;
 
-      html += `<div class="project-group">
+      html += `<div class="project-group" id="group-${esc(g.key)}">
         <div class="group-head">
           <div class="group-label">${esc(g.label)}</div>
           <div class="group-desc">${esc(g.desc)}</div>
