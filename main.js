@@ -198,12 +198,12 @@
     container.innerHTML = D.gameExperience
       .map((g) => {
         const items = g.items
-          .map(
-            (it) =>
-              `<span class="game-item">${esc(it.name)}<span class="detail">${esc(
-                it.detail
-              )}</span></span>`
-          )
+          .map((it) => {
+            const detail = it.detail
+              ? `<span class="detail">${esc(it.detail)}</span>`
+              : "";
+            return `<span class="game-item">${esc(it.name)}${detail}</span>`;
+          })
           .join("");
         return `<div class="game-group">
           <div class="game-category">${esc(g.category)}</div>
