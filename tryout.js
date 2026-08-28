@@ -1,8 +1,8 @@
 /* =========================================================================
  * 在线试用（tryout.js）
  * -------------------------------------------------------------------------
- * 为「游戏玩家舆情智能分析 Agent」「古籍书目智能匹配系统」两个项目提供
- * 在线试用入口。纯前端实现，无后端、不经过任何服务器：
+ * 为「游戏玩家舆情智能分析 Agent」项目提供在线试用入口。纯前端实现，
+ * 无后端、不经过任何服务器：
  *   - 演示版：回放预跑好的真实结果，零成本零风险。
  *   - 自助体验：面试官自填 API Key，浏览器直连模型厂商，Key 仅存本机浏览器。
  * 数据全部来自真实预跑结果，见各字段注释。
@@ -108,33 +108,15 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
  "negative_samples": [1, 3, 6],
  "summary": "...", "reasoning": "..."}`;
 
-  /* ---------- 古籍 Agent：LLM 裁决提示词（与裸测模式 bare_test_judge.py 一致） ---------- */
-  const ANCIENT_SYSTEM_PROMPT = `你是古籍目录学专家，负责判断《隋书·经籍志》与《旧唐书·经籍志》之间的书目对应关系。请严格按要求输出 JSON。`;
-
-  function buildAncientUserPrompt(c) {
-    const candText = c.candidates
-      .map((x, i) => `${i + 1}. 《${x.title}》 - ${x.author} - ${x.volumes}卷`)
-      .join("\n");
-
-    return `请判断以下隋志记录与哪个旧唐志记录最匹配：
-
-隋志记录：
-《${c.sui.title}》 - ${c.sui.author} - ${c.sui.volumes}卷
-
-候选旧唐志记录：
-${candText}
-
-注意：卷数在流传中出现变化较大，可能翻倍增减，不可据此肯定或否决匹配。
-两可之间无法确定时返回 matched_index 为 0，不要强行匹配。
-
-请严格按照以下JSON格式输出，不要包含任何其他文字或解释：
-{"matched_index": <整数>, "reason": "<简要说明>"}
-
-- matched_index: 匹配的候选记录编号（从1开始），无法匹配时填0
-- reason: 匹配或不匹配的简要理由
-- 编号必须对应候选记录：数字1对应候选1，数字2对应候选2，以此类推
-
-只输出上述JSON，不要包含其他内容。`;
+  function buildSentimentUserPrompt(s) {
+    return `以下是今日社区中发现的讨论聚类信号，请逐一评估：\n\n` +
+      `--- 信号组 1 ---\n` +
+      `实体/话题: ${s.entity}\n` +
+      `关联帖子数: ${s.count}\n` +
+      `样本标题:\n` +
+      s.sampleTitles.map((t, i) => `  [${i + 1}] ${t}`).join("\n") +
+      `\n\n请返回 JSON 对象，格式如下：\n` +
+      `{"id": 1, "sentiment": "负面", "risk_level": "高风险", "is_genuine_issue": true, "negative_samples": [1, 3], "summary": "...", "reasoning": "..."}`;
   }
 
   /* ---------- 各项目试用数据 ---------- */
@@ -168,99 +150,54 @@ ${candText}
         ],
       },
       byok: {
-        // 预置样本标题，来自「月之六」日报『节奏』聚类，情绪以负面为主
-        sampleTitles: [
-          "没人感觉原神真的抄了很多吗",
-          "完全搞不懂有什么好吹的",
-          "这还是原神吗？？？",
-          "米哈游剧情真越来越无聊了，凉了吧。。",
-          "我为什么不推荐任何人抽莉奈娅",
-          "莉奈娅抽不抽？版本特供是巧思，还是精密消费陷阱",
-        ],
-      },
-    },
-
-    /* ===== A2 古籍 Agent ===== */
-    "ancient-books": {
-      title: "古籍书目智能匹配系统",
-      demo: {
-        steps: ["输入书目", "预处理", "7 层规则扫描", "LLM 裁决", "输出结果"],
-        // 以下案例来自《隋书·经籍志》《旧唐书·经籍志》人工校对正确匹配版
-        cases: [
+        // 预置信号组，取自「月之六」周报的真实聚类结果（信号发现层输出）
+        // 每组：话题实体 + 帖子数 + 负面样本标题，用于面试官体验 LLM 精判这一步
+        signals: [
           {
-            name: "异名匹配",
-            sui: { title: "史记音义", author: "徐野民", volumes: "12" },
-            candidates: [
-              { title: "史记音义", author: "徐广", volumes: "13" },
-              { title: "史记音", author: "邹诞生", volumes: "3" },
-              { title: "史记", author: "司马迁", volumes: "130" },
-            ],
-            matched: "《史记音义》— 徐广",
-            detail: "徐野民即徐广（作者异名），卷数 12 → 13（增 1）",
-          },
-          {
-            name: "精确匹配",
-            sui: { title: "汉书", author: "班固", volumes: "115" },
-            candidates: [
-              { title: "汉书", author: "班固", volumes: "115" },
-              { title: "汉书集解音义", author: "应劭", volumes: "24" },
-              { title: "汉书音义", author: "韦昭", volumes: "7" },
-            ],
-            matched: "《汉书》— 班固",
-            detail: "书名、作者、卷数完全一致，卷数 115 → 115（不变）",
-          },
-          {
-            name: "无匹配",
-            sui: { title: "汉书音", author: "刘显", volumes: "2" },
-            candidates: [
-              { title: "汉书音义", author: "萧该", volumes: "12" },
-              { title: "汉书音", author: "包恺", volumes: "12" },
-              { title: "汉书音", author: "夏侯泳", volumes: "2" },
-            ],
-            matched: "无匹配",
-            detail: "旧唐志中未见刘显对应书目，返回空",
-          },
-        ],
-      },
-      byok: {
-        // 预置案例，来自人工校对正确匹配版真实记录（候选含正确答案与干扰项）
-        cases: [
-          {
-            label: "史记音义 · 徐野民（异名匹配）",
-            sui: { title: "史记音义", author: "徐野民", volumes: "12" },
-            candidates: [
-              { title: "史记音义", author: "徐广", volumes: "13" },
-              { title: "史记音", author: "邹诞生", volumes: "3" },
-              { title: "史记", author: "司马迁", volumes: "130" },
-              { title: "史记", author: "裴骃", volumes: "80" },
+            id: "rhythm",
+            label: "节奏 · 抄袭与无聊质疑",
+            entity: "节奏",
+            count: 41,
+            platform: "小红书",
+            source: "敏感词命中 + 负面词共现",
+            sampleTitles: [
+              "没人感觉原神真的抄了很多吗",
+              "完全搞不懂有什么好吹的",
+              "这还是原神吗？？？",
+              "黑皮究竟是谁在喜欢啊？",
+              "米哈游剧情真越来越无聊了，凉了吧。。",
+              "我为什么不推荐任何人抽莉奈娅",
             ],
           },
           {
-            label: "汉书 · 班固（精确匹配）",
-            sui: { title: "汉书", author: "班固", volumes: "115" },
-            candidates: [
-              { title: "汉书", author: "班固", volumes: "115" },
-              { title: "汉书集解音义", author: "应劭", volumes: "24" },
-              { title: "汉书音义", author: "韦昭", volumes: "7" },
-              { title: "汉书音训", author: "服虔", volumes: "1" },
+            id: "bug",
+            label: "BUG · 无限材料恶性漏洞",
+            entity: "BUG",
+            count: 11,
+            platform: "小红书",
+            source: "敏感词命中",
+            sampleTitles: [
+              "原神月之六无限材料BUG",
+              "这个怎么办，出bug了",
+              "米哈游……为什么我的莉奈娅是紫色的！",
+              "麓阳书院这里不对吧",
+              "这是bug嘛…",
             ],
           },
           {
-            label: "史记音 · 邹诞生（书名相近）",
-            sui: { title: "史记音", author: "邹诞生", volumes: "3" },
-            candidates: [
-              { title: "史记音义", author: "邹诞生", volumes: "3" },
-              { title: "史记音义", author: "徐广", volumes: "13" },
-              { title: "史记", author: "裴骃", volumes: "80" },
-            ],
-          },
-          {
-            label: "汉书音 · 刘显（无匹配）",
-            sui: { title: "汉书音", author: "刘显", volumes: "2" },
-            candidates: [
-              { title: "汉书音义", author: "萧该", volumes: "12" },
-              { title: "汉书音", author: "包恺", volumes: "12" },
-              { title: "汉书音", author: "夏侯泳", volumes: "2" },
+            id: "linaeya",
+            label: "节奏 · 消费陷阱与强度争议",
+            entity: "节奏",
+            count: 20,
+            platform: "B站",
+            source: "负面词共现",
+            sampleTitles: [
+              "莉奈娅抽不抽？版本特供是巧思，还是精密消费陷阱",
+              "真别抽莉奈娅",
+              "月之六版本的第一个大冤种",
+              "原神6.5版本又开始他那小巧思了，烦不烦啊",
+              "——说好的原神是单机游戏呢？",
+              "原神出新地图和你鸣潮有什么关系？...空之神殿不过是mini版鸣潮2.0罢了！",
             ],
           },
         ],
@@ -392,9 +329,7 @@ ${candText}
   }
 
   function renderDemoResult() {
-    const d = TRYOUT_DATA[currentId].demo;
-    if (currentId === "sentiment-agent") return renderSentimentResult(d);
-    return renderAncientResult(d);
+    return renderSentimentResult(TRYOUT_DATA[currentId].demo);
   }
 
   function renderSentimentResult(d) {
@@ -431,33 +366,6 @@ ${candText}
       <div class="demo-risks">${risks}</div>
       <div class="demo-section-title">运营建议</div>
       <ol class="demo-advice">${advice}</ol>`;
-  }
-
-  function renderAncientResult(d) {
-    const cases = d.cases
-      .map(
-        (c) => `
-        <div class="demo-ancient-case">
-          <div class="demo-ancient-name">${esc(c.name)}</div>
-          <div class="demo-ancient-row">
-            <span class="demo-ancient-label">隋志</span>
-            <span>《${esc(c.sui.title)}》— ${esc(c.sui.author)} — ${esc(c.sui.volumes)}卷</span>
-          </div>
-          <div class="demo-ancient-row">
-            <span class="demo-ancient-label">候选</span>
-            <span>${c.candidates
-              .map((x) => `《${esc(x.title)}》— ${esc(x.author)}`)
-              .join(" · ")}</span>
-          </div>
-          <div class="demo-ancient-row">
-            <span class="demo-ancient-label">裁决</span>
-            <strong>${esc(c.matched)}</strong>
-          </div>
-          <div class="demo-ancient-detail">${esc(c.detail)}</div>
-        </div>`
-      )
-      .join("");
-    return `<div class="demo-ancient-list">${cases}</div>`;
   }
 
   function runDemo() {
@@ -500,8 +408,6 @@ ${candText}
       )
       .join("");
 
-    const isSentiment = currentId === "sentiment-agent";
-
     return `
       <div class="tryout-note">
         面试官自填 API Key，浏览器直连模型厂商完成一次真实调用。Key 仅存于你本机浏览器
@@ -523,45 +429,48 @@ ${candText}
         </div>
       </div>
 
-      ${
-        isSentiment
-          ? `
-      <div class="byok-input">
-        <div class="byok-field">
-          <label>话题实体（可选）</label>
-          <input id="byok-entity" type="text" placeholder="例如：莉奈娅强度" />
-        </div>
-        <div class="byok-field">
-          <label>涉及帖子数（可选）</label>
-          <input id="byok-count" type="number" min="1" placeholder="默认等于样本条数" />
-        </div>
-        <div class="byok-field">
-          <label>样本标题（每行一条）</label>
-          <textarea id="byok-titles" rows="7" placeholder="粘贴帖子标题，每行一条"></textarea>
-          <button class="byok-link" id="byok-sample" type="button">填入示例</button>
-        </div>
-      </div>
-      <div class="byok-run-row">
-        <button class="btn btn-primary" id="byok-run" type="button">开始分析</button>
-      </div>`
-          : `
-      <div class="byok-input">
-        <div class="byok-field">
-          <label>预置案例</label>
-          <select id="byok-case">
-            ${TRYOUT_DATA[currentId].byok.cases
-              .map((c, i) => `<option value="${i}">${esc(c.label)}</option>`)
-              .join("")}
-          </select>
-          <div class="byok-case-preview" id="byok-case-preview"></div>
-        </div>
-      </div>
-      <div class="byok-run-row">
-        <button class="btn btn-primary" id="byok-run" type="button">开始裁决</button>
-      </div>`
-      }
+      ${renderSentimentByokForm()}
 
       <div class="byok-result" id="byok-result" hidden></div>`;
+  }
+
+  /* 舆情：选预置信号组。数据加载→清洗→聚类→评分已由规则层跑完，此处体验 LLM 精判最后一步 */
+  function renderSentimentByokForm() {
+    const signals = TRYOUT_DATA[currentId].byok.signals;
+    return `
+      <div class="byok-input">
+        <div class="byok-field">
+          <label>选择信号组（来自真实聚类结果）</label>
+          <select id="byok-signal">
+            ${signals
+              .map((s, i) => `<option value="${i}">${esc(s.label)}</option>`)
+              .join("")}
+          </select>
+          <div class="byok-case-preview" id="byok-signal-preview"></div>
+        </div>
+      </div>
+      <div class="byok-run-row">
+        <button class="btn btn-primary" id="byok-run" type="button">开始精判</button>
+      </div>`;
+  }
+
+  function renderSignalPreview() {
+    const signalSel = document.getElementById("byok-signal");
+    const preview = document.getElementById("byok-signal-preview");
+    const s = TRYOUT_DATA[currentId].byok.signals[Number(signalSel.value)];
+    preview.innerHTML =
+      `<div class="byok-pipeline">
+        ${["数据加载", "清洗去重", "规则聚类", "程序评分"]
+          .map((p) => `<span class="byok-pipeline-step">${p}</span>`)
+          .join("")}
+        <span class="byok-pipeline-step current">LLM 精判</span>
+      </div>` +
+      `<div class="byok-preview-line">话题实体：${esc(s.entity)} · 帖子数 ${esc(s.count)} · ${esc(s.platform)}</div>` +
+      `<div class="byok-preview-line">信源：${esc(s.source)}</div>` +
+      `<div class="byok-preview-line">样本标题（负面优先）：</div>` +
+      s.sampleTitles
+        .map((t, i) => `<div class="byok-preview-title">[${i + 1}] ${esc(t)}</div>`)
+        .join("");
   }
 
   function bindTabEvents(tab) {
@@ -585,27 +494,9 @@ ${candText}
       keyInput.value = k; // 触发一次，保持
     }
 
-    const isSentiment = currentId === "sentiment-agent";
-
-    if (isSentiment) {
-      document.getElementById("byok-sample").addEventListener("click", () => {
-        document.getElementById("byok-titles").value =
-          TRYOUT_DATA[currentId].byok.sampleTitles.join("\n");
-      });
-    } else {
-      const caseSel = document.getElementById("byok-case");
-      const preview = document.getElementById("byok-case-preview");
-      const renderPreview = () => {
-        const c = TRYOUT_DATA[currentId].byok.cases[Number(caseSel.value)];
-        preview.innerHTML =
-          `<div class="byok-preview-line">隋志：《${esc(c.sui.title)}》— ${esc(c.sui.author)} — ${esc(c.sui.volumes)}卷</div>` +
-          `<div class="byok-preview-line">候选：${c.candidates
-            .map((x, i) => `${i + 1}.《${esc(x.title)}》— ${esc(x.author)}（${esc(x.volumes)}卷）`)
-            .join("；")}</div>`;
-      };
-      caseSel.addEventListener("change", renderPreview);
-      renderPreview();
-    }
+    const signalSel = document.getElementById("byok-signal");
+    signalSel.addEventListener("change", renderSignalPreview);
+    renderSignalPreview();
 
     document.getElementById("byok-run").addEventListener("click", () => runByok());
   }
@@ -690,49 +581,17 @@ ${candText}
 
     saveKey(provider, apiKey, model);
 
-    let systemPrompt, userPrompt;
-    if (currentId === "sentiment-agent") {
-      const entity = document.getElementById("byok-entity").value.trim() || "自定义话题";
-      const titles = document
-        .getElementById("byok-titles")
-        .value.split("\n")
-        .map((s) => s.trim())
-        .filter(Boolean);
-      const countRaw = document.getElementById("byok-count").value.trim();
-      const count = countRaw ? Number(countRaw) : titles.length;
-
-      if (!titles.length) {
-        resultEl.hidden = false;
-        resultEl.innerHTML = `<div class="byok-error">请至少输入一条样本标题。</div>`;
-        return;
-      }
-
-      systemPrompt = SENTIMENT_SYSTEM_PROMPT;
-      userPrompt =
-        `以下是今日社区中发现的讨论聚类信号，请逐一评估：\n\n` +
-        `--- 信号组 1 ---\n` +
-        `实体/话题: ${entity}\n` +
-        `关联帖子数: ${count}\n` +
-        `样本标题:\n` +
-        titles.map((t, i) => `  [${i + 1}] ${t}`).join("\n") +
-        `\n\n请返回 JSON 对象，格式如下：\n` +
-        `{"id": 1, "sentiment": "负面", "risk_level": "高风险", "is_genuine_issue": true, "negative_samples": [1, 3], "summary": "...", "reasoning": "..."}`;
-    } else {
-      const caseIdx = Number(document.getElementById("byok-case").value);
-      const c = TRYOUT_DATA[currentId].byok.cases[caseIdx];
-      systemPrompt = ANCIENT_SYSTEM_PROMPT;
-      userPrompt = buildAncientUserPrompt(c);
-    }
+    const signalIdx = Number(document.getElementById("byok-signal").value);
+    const s = TRYOUT_DATA[currentId].byok.signals[signalIdx];
+    const systemPrompt = SENTIMENT_SYSTEM_PROMPT;
+    const userPrompt = buildSentimentUserPrompt(s);
 
     runBtn.disabled = true;
     resultEl.hidden = false;
     resultEl.innerHTML = `<div class="byok-loading">正在调用 ${PROVIDERS[provider].label}，请稍候…</div>`;
 
     callLLM(provider, apiKey, model, systemPrompt, userPrompt)
-      .then((text) => {
-        if (currentId === "sentiment-agent") renderSentimentByokResult(resultEl, text);
-        else renderAncientByokResult(resultEl, text);
-      })
+      .then((text) => renderSentimentByokResult(resultEl, text))
       .catch((err) => {
         resultEl.innerHTML = `<div class="byok-error">${esc(err.message)}</div>`;
       })
@@ -751,8 +610,15 @@ ${candText}
     }
     const riskCls =
       j.risk_level === "高风险" ? "red" : j.risk_level === "可能发酵" ? "orange" : "blue";
+    const signalIdx = Number(document.getElementById("byok-signal").value);
+    const s = TRYOUT_DATA[currentId].byok.signals[signalIdx];
     const neg = Array.isArray(j.negative_samples)
-      ? j.negative_samples.map((n) => String(n)).join("、")
+      ? j.negative_samples
+          .map((n) => {
+            const t = s.sampleTitles[Number(n) - 1];
+            return t ? `[${n}] ${esc(t)}` : String(n);
+          })
+          .join("<br>")
       : "—";
     el.innerHTML = `
       <div class="byok-result-card">
@@ -765,47 +631,13 @@ ${candText}
         <div class="byok-result-row"><span class="k">是否需关注</span><span class="v">${
           j.is_genuine_issue ? "是" : "否"
         }</span></div>
-        <div class="byok-result-row"><span class="k">负面样本编号</span><span class="v">${esc(
-          neg
-        )}</span></div>
+        <div class="byok-result-row"><span class="k">负面样本</span><span class="v">${neg}</span></div>
         <div class="byok-result-row"><span class="k">摘要</span><span class="v">${esc(
           j.summary || "—"
         )}</span></div>
         <div class="byok-result-row"><span class="k">判断依据</span><span class="v">${esc(
           j.reasoning || "—"
         )}</span></div>
-      </div>`;
-  }
-
-  function renderAncientByokResult(el, text) {
-    const caseIdx = Number(document.getElementById("byok-case").value);
-    const c = TRYOUT_DATA[currentId].byok.cases[caseIdx];
-    const j = parseJson(text);
-    if (!j || !("matched_index" in j)) {
-      el.innerHTML = `<div class="byok-error">未能解析模型返回，请重试。原始返回：<pre>${esc(
-        text
-      )}</pre></div>`;
-      return;
-    }
-    const idx = Number(j.matched_index);
-    let matchedText;
-    if (idx >= 1 && idx <= c.candidates.length) {
-      const m = c.candidates[idx - 1];
-      matchedText = `候选 ${idx}：《${m.title}》— ${m.author}`;
-    } else {
-      matchedText = "无匹配";
-    }
-    el.innerHTML = `
-      <div class="byok-result-card">
-        <div class="byok-result-row"><span class="k">裁决结果</span><span class="v"><strong>${esc(
-          matchedText
-        )}</strong></span></div>
-        <div class="byok-result-row"><span class="k">理由</span><span class="v">${esc(
-          j.reason || "—"
-        )}</span></div>
-        <div class="byok-result-row"><span class="k">候选列表</span><span class="v">${c.candidates
-          .map((x, i) => `${i + 1}.《${esc(x.title)}》— ${esc(x.author)}（${esc(x.volumes)}卷）`)
-          .join("<br>")}</span></div>
       </div>`;
   }
 
