@@ -1,21 +1,24 @@
 /* =========================================================================
  * 作品集样式（style.css）
- * 深色主题，强调色 #4FD1C5，响应式（移动端优先）
+ * 浅色专业风，强调色 #2F6FED，响应式（移动端优先）
  * ========================================================================= */
 
 :root {
-  --bg: #0F1115;
-  --bg-alt: #131722;
-  --card: #161A22;
-  --card-hover: #1A202B;
-  --border: #232936;
-  --border-strong: #2E3746;
-  --text: #E6E9EF;
-  --text-secondary: #9AA3B2;
-  --text-faint: #6B7383;
-  --accent: #4FD1C5;
-  --accent-soft: rgba(79, 209, 197, 0.12);
-  --accent-dim: rgba(79, 209, 197, 0.55);
+  --bg: #FAFAF9;
+  --bg-alt: #F3F4F6;
+  --card: #FFFFFF;
+  --card-hover: #FAFBFC;
+  --border: #E5E7EB;
+  --border-strong: #D1D5DB;
+  --text: #1A1A1A;
+  --text-secondary: #5A6472;
+  --text-faint: #8A94A3;
+  --accent: #2F6FED;
+  --accent-hover: #1D5BD0;
+  --accent-soft: rgba(47, 111, 237, 0.08);
+  --accent-dim: rgba(47, 111, 237, 0.45);
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 8px 24px rgba(16, 24, 40, 0.10);
   --radius: 12px;
   --maxw: 1080px;
 }
@@ -35,7 +38,7 @@ body {
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -56,7 +59,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(15, 17, 21, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -84,7 +87,7 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 22px;
+  gap: 24px;
 }
 
 .nav-links a {
@@ -106,6 +109,7 @@ a {
 .hero-eyebrow {
   color: var(--accent);
   font-size: 14px;
+  font-weight: 600;
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
@@ -116,6 +120,7 @@ a {
   letter-spacing: 2px;
   line-height: 1.1;
   margin-bottom: 20px;
+  color: var(--text);
 }
 
 .hero-tagline {
@@ -135,7 +140,7 @@ a {
 /* ---------- 按钮 ---------- */
 .btn {
   display: inline-block;
-  padding: 11px 22px;
+  padding: 11px 24px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
@@ -146,16 +151,17 @@ a {
 
 .btn-primary {
   background: var(--accent);
-  color: #0B0E12;
+  color: #FFFFFF;
 }
 
 .btn-primary:hover {
-  background: #3BB8AC;
+  background: var(--accent-hover);
 }
 
 .btn-ghost {
   border-color: var(--border-strong);
   color: var(--text);
+  background: var(--card);
 }
 
 .btn-ghost:hover {
@@ -177,6 +183,7 @@ a {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: var(--text);
 }
 
 .section-lead {
@@ -188,7 +195,8 @@ a {
 /* ---------- 关于我 ---------- */
 #about-positioning {
   font-size: 17px;
-  line-height: 1.9;
+  line-height: 1.95;
+  color: var(--text-secondary);
 }
 
 /* ---------- 作品集分组 ---------- */
@@ -209,7 +217,7 @@ a {
 .group-label {
   font-size: 20px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text);
   margin-bottom: 6px;
 }
 
@@ -226,12 +234,17 @@ a {
   padding: 24px 26px;
   margin-bottom: 16px;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 }
 
 .project-card:hover {
   border-color: var(--border-strong);
-  background: var(--card-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-card.open {
+  border-color: var(--accent-dim);
 }
 
 .project-card-head {
@@ -245,6 +258,7 @@ a {
   font-size: 19px;
   font-weight: 700;
   margin-bottom: 4px;
+  color: var(--text);
 }
 
 .project-subtitle {
@@ -273,7 +287,8 @@ a {
   font-size: 12px;
   background: var(--accent-soft);
   color: var(--accent);
-  border: 1px solid var(--accent-dim);
+  border: 1px solid transparent;
+  font-weight: 500;
 }
 
 .key-data {
@@ -282,8 +297,8 @@ a {
   border-radius: 20px;
   font-size: 12px;
   color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-strong);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
 }
 
 .project-toggle {
@@ -295,6 +310,7 @@ a {
 
 .project-card.open .project-toggle {
   transform: rotate(45deg);
+  color: var(--accent);
 }
 
 /* 展开详情 */
@@ -362,12 +378,14 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
+  box-shadow: var(--shadow);
 }
 
 .framework-title {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--text);
 }
 
 .framework-desc {
@@ -387,7 +405,7 @@ a {
 .game-category {
   font-size: 15px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text);
   margin-bottom: 12px;
 }
 
@@ -403,6 +421,7 @@ a {
   border-radius: 8px;
   padding: 8px 14px;
   font-size: 14px;
+  color: var(--text);
 }
 
 .game-item .detail {
@@ -432,6 +451,7 @@ a {
 .resume-title {
   font-size: 18px;
   font-weight: 700;
+  color: var(--text);
 }
 
 .resume-period {
@@ -483,6 +503,7 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
+  box-shadow: var(--shadow);
 }
 
 .contact-item .label {
@@ -494,6 +515,7 @@ a {
 .contact-item .value {
   font-size: 16px;
   word-break: break-all;
+  color: var(--text);
 }
 
 /* ---------- footer ---------- */

@@ -368,3 +368,6 @@ const SITE_DATA = {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = SITE_DATA;
 }
+if (typeof window !== "undefined") {
+  window.SITE_DATA = SITE_DATA;
+}
