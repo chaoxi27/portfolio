@@ -111,17 +111,6 @@
         showSection(a.getAttribute("href").slice(1));
       });
     });
-    document.querySelectorAll(".group-link").forEach((a) => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        showSection("portfolio");
-        const targetId = a.getAttribute("href").slice(1);
-        setTimeout(() => {
-          const el = document.getElementById(targetId);
-          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 0);
-      });
-    });
   }
 
   /* ---------- 作品集 ---------- */
@@ -158,23 +147,20 @@
   }
 
   function renderProjects() {
-    const container = el("project-groups");
-    let html = "";
-
     D.groups.forEach((g) => {
       const projects = D.projects.filter((p) => p.group === g.key);
       if (!projects.length) return;
 
-      html += `<div class="project-group" id="group-${esc(g.key)}">
+      const container = el(`group-${g.key}-content`);
+      if (!container) return;
+
+      container.innerHTML = `
         <div class="group-head">
           <div class="group-label">${esc(g.label)}</div>
           <div class="group-desc">${esc(g.desc)}</div>
         </div>
-        ${projects.map(buildProjectCard).join("")}
-      </div>`;
+        ${projects.map(buildProjectCard).join("")}`;
     });
-
-    container.innerHTML = html;
   }
 
   /* 项目卡片展开 / 收起 */
@@ -204,20 +190,6 @@
         syncFloat();
       });
     }
-  }
-
-  /* ---------- 分析维度 ---------- */
-  function renderFramework() {
-    const container = el("framework-grid");
-    container.innerHTML = D.analysisFramework
-      .map(
-        (f) => `
-        <div class="framework-card">
-          <div class="framework-title">${esc(f.title)}</div>
-          <div class="framework-desc">${esc(f.desc)}</div>
-        </div>`
-      )
-      .join("");
   }
 
   /* ---------- 游戏经历 ---------- */
@@ -268,7 +240,6 @@
     renderAbout();
     renderProjects();
     bindProjectToggle();
-    renderFramework();
     renderGames();
     renderContact();
     bindNav();

@@ -106,52 +106,6 @@ a {
   font-weight: 600;
 }
 
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  min-width: 140px;
-  height: 10px;
-}
-
-.nav-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 8px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: var(--shadow-lg);
-  min-width: 140px;
-  padding: 6px 0;
-  z-index: 60;
-}
-
-.nav-dropdown:hover .nav-dropdown-menu {
-  display: block;
-}
-
-.nav-dropdown-menu a {
-  display: block;
-  padding: 8px 16px;
-  color: var(--text-secondary);
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.nav-dropdown-menu a:hover {
-  color: var(--accent);
-  background: var(--bg-alt);
-}
-
 /* ---------- 按钮 ---------- */
 .btn {
   display: inline-block;
@@ -224,15 +178,6 @@ a {
 }
 
 /* ---------- 作品集分组 ---------- */
-.project-group {
-  margin-bottom: 48px;
-  scroll-margin-top: 80px;
-}
-
-.project-group:last-child {
-  margin-bottom: 0;
-}
-
 .group-head {
   margin-bottom: 20px;
   padding-bottom: 14px;
@@ -465,33 +410,6 @@ a {
 
 .float-collapse[hidden] {
   display: none;
-}
-
-/* ---------- 分析维度 ---------- */
-.framework-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 16px;
-}
-
-.framework-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.framework-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text);
-}
-
-.framework-desc {
-  color: var(--text-secondary);
-  font-size: 14px;
 }
 
 /* ---------- 游戏经历 ---------- */
