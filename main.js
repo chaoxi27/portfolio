@@ -8,6 +8,7 @@
   "use strict";
 
   const D = window.SITE_DATA;
+  const C = window.PROJECT_CONTENT;
 
   /* ---------- 工具 ---------- */
   function el(id) {
@@ -34,40 +35,20 @@
 
   /* ---------- 作品集 ---------- */
   function buildProjectDetail(p) {
-    const blocks = [
-      ["解决什么问题", p.problem],
-      ["项目背景", p.background],
-      ["方法与过程", p.method],
-      ["关键产出与数据", p.output],
-      ["方法论沉淀", p.methodology]
-    ];
-
-    let html = blocks
-      .map(
-        ([label, text]) =>
-          `<div class="detail-block">
-            <div class="detail-label">${esc(label)}</div>
-            <p class="detail-text">${esc(text)}</p>
-          </div>`
-      )
-      .join("");
-
-    const highlights = (p.highlights || [])
-      .map((h) => `<li>${esc(h)}</li>`)
-      .join("");
-    if (highlights) {
-      html += `<div class="detail-block">
-        <div class="detail-label">核心亮点</div>
-        <ul class="highlight-list">${highlights}</ul>
-      </div>`;
-    }
-
-    return html;
+    const pc = C[p.id] || {};
+    return `<div class="project-article">${pc.content || ""}</div>`;
   }
 
   function buildProjectCard(p) {
     const tags = (p.tags || [])
       .map((t) => `<span class="tag">${esc(t)}</span>`)
+      .join("");
+
+    const pc = C[p.id] || {};
+    const overview = String(pc.overview || "")
+      .split("\n")
+      .filter((s) => s.trim())
+      .map((s) => `<p>${esc(s)}</p>`)
       .join("");
 
     return `
@@ -76,11 +57,8 @@
           <div class="project-main">
             <h3 class="project-title">${esc(p.title)}</h3>
             <div class="project-subtitle">${esc(p.subtitle || "")}</div>
-            <p class="project-oneliner">${esc(p.oneLiner)}</p>
-            <div class="project-meta">
-              ${tags}
-              <span class="key-data">${esc(p.keyData)}</span>
-            </div>
+            <div class="project-meta">${tags}</div>
+            <div class="project-overview">${overview}</div>
           </div>
           <span class="project-toggle">＋</span>
         </div>
