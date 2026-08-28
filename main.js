@@ -36,7 +36,8 @@
   /* ---------- 作品集 ---------- */
   function buildProjectDetail(p) {
     const pc = C[p.id] || {};
-    return `<div class="project-article">${pc.content || ""}</div>`;
+    return `<div class="project-article">${pc.content || ""}</div>
+      <button class="project-collapse" type="button">▲ 收起</button>`;
   }
 
   function buildProjectCard(p) {
@@ -94,6 +95,12 @@
       head.addEventListener("click", () => {
         card.classList.toggle("open");
       });
+      const collapse = card.querySelector(".project-collapse");
+      if (collapse) {
+        collapse.addEventListener("click", () => {
+          card.classList.remove("open");
+        });
+      }
     });
   }
 
