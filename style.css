@@ -100,6 +100,11 @@ a {
   color: var(--accent);
 }
 
+.nav-links a.tab-link.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .nav-dropdown {
   position: relative;
 }
@@ -136,43 +141,6 @@ a {
   background: var(--bg-alt);
 }
 
-/* ---------- Hero ---------- */
-.hero {
-  padding: 120px 0 96px;
-  text-align: center;
-}
-
-.hero-eyebrow {
-  color: var(--accent);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-.hero-name {
-  font-size: 56px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  color: var(--text);
-}
-
-.hero-tagline {
-  color: var(--text-secondary);
-  font-size: 19px;
-  max-width: 620px;
-  margin: 0 auto 36px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 /* ---------- 按钮 ---------- */
 .btn {
   display: inline-block;
@@ -207,8 +175,13 @@ a {
 
 /* ---------- 通用 section ---------- */
 .section {
+  display: none;
   padding: 72px 0;
   border-top: 1px solid var(--border);
+}
+
+.section.active {
+  display: block;
 }
 
 .section-alt {
@@ -640,18 +613,6 @@ a {
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 720px) {
-  .hero {
-    padding: 88px 0 72px;
-  }
-
-  .hero-name {
-    font-size: 40px;
-  }
-
-  .hero-tagline {
-    font-size: 17px;
-  }
-
   .section {
     padding: 56px 0;
   }

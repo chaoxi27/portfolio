@@ -22,15 +22,40 @@
       .replace(/>/g, "&gt;");
   }
 
-  /* ---------- Hero ---------- */
-  function renderHero() {
-    el("hero-name").textContent = D.site.name;
-    el("hero-tagline").textContent = D.site.tagline;
-  }
-
   /* ---------- 关于我 ---------- */
   function renderAbout() {
     el("about-positioning").textContent = D.positioning;
+  }
+
+  /* ---------- 分区 tab 切换 ---------- */
+  function showSection(id) {
+    document.querySelectorAll(".section").forEach((s) => {
+      s.classList.toggle("active", s.id === id);
+    });
+    document.querySelectorAll(".tab-link").forEach((a) => {
+      a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+    });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }
+
+  function bindNav() {
+    document.querySelectorAll(".tab-link").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSection(a.getAttribute("href").slice(1));
+      });
+    });
+    document.querySelectorAll(".group-link").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSection("portfolio");
+        const targetId = a.getAttribute("href").slice(1);
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 0);
+      });
+    });
   }
 
   /* ---------- 作品集 ---------- */
@@ -229,7 +254,6 @@
 
   /* ---------- 初始化 ---------- */
   function init() {
-    renderHero();
     renderAbout();
     renderProjects();
     bindProjectToggle();
@@ -237,6 +261,8 @@
     renderGames();
     renderResume();
     renderContact();
+    bindNav();
+    showSection("about");
   }
 
   if (document.readyState === "loading") {
