@@ -356,7 +356,12 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
    * ============================================================ */
   function renderDemo() {
     const d = TRYOUT_DATA[currentId].demo;
+    const submissionNote =
+      currentId === "ancient-books"
+        ? `<p class="tryout-note">该项目正在投稿中，仅提供演示版本。</p>`
+        : "";
     return `
+      ${submissionNote}
       <p class="tryout-note">回放一次真实的运行过程与结果。数据为预先跑出的真实输出，非实时调用。</p>
       <div class="tryout-run-row">
         <button class="btn btn-primary" id="tryout-run" type="button">▶ 运行</button>
@@ -441,9 +446,7 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
         </div>`
       )
       .join("");
-    return `
-      <div class="demo-ancient-note">该项目正在投稿中，仅提供演示版本。</div>
-      <div class="demo-ancient-list">${cases}</div>`;
+    return `<div class="demo-ancient-list">${cases}</div>`;
   }
 
   function runDemo() {
