@@ -127,8 +127,7 @@
   /* ---------- 作品集 ---------- */
   function buildProjectDetail(p) {
     const pc = C[p.id] || {};
-    return `<div class="project-article">${pc.content || ""}</div>
-      <button class="project-collapse" type="button">▲ 收起</button>`;
+    return `<div class="project-article">${pc.content || ""}</div>`;
   }
 
   function buildProjectCard(p) {
@@ -181,18 +180,30 @@
   /* 项目卡片展开 / 收起 */
   function bindProjectToggle() {
     const cards = document.querySelectorAll(".project-card");
+    const floatCollapse = el("float-collapse");
+
+    function syncFloat() {
+      if (!floatCollapse) return;
+      const anyOpen = document.querySelector(".project-card.open");
+      floatCollapse.hidden = !anyOpen;
+    }
+
     cards.forEach((card) => {
       const head = card.querySelector(".project-card-head");
       head.addEventListener("click", () => {
         card.classList.toggle("open");
+        syncFloat();
       });
-      const collapse = card.querySelector(".project-collapse");
-      if (collapse) {
-        collapse.addEventListener("click", () => {
-          card.classList.remove("open");
-        });
-      }
     });
+
+    if (floatCollapse) {
+      floatCollapse.addEventListener("click", () => {
+        document
+          .querySelectorAll(".project-card.open")
+          .forEach((c) => c.classList.remove("open"));
+        syncFloat();
+      });
+    }
   }
 
   /* ---------- 分析维度 ---------- */
