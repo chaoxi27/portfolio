@@ -14,6 +14,9 @@ const SITE_DATA = {
   site: {
     name: "赵芷欣",
     role: "游戏运营",
+    gender: "女",
+    age: "23",
+    highestDegree: "硕士",
     tagline: "关注游戏产品体验与 AI 工具应用的交界地带",
     contact: {
       phone: "19865864981",

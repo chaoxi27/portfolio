@@ -22,9 +22,75 @@
       .replace(/>/g, "&gt;");
   }
 
-  /* ---------- 关于我 ---------- */
+  /* ---------- 关于我（含简历） ---------- */
   function renderAbout() {
-    el("about-positioning").textContent = D.positioning;
+    const S = D.site;
+    const R = D.resume;
+
+    const edu = R.education
+      .map(
+        (e) => `
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <span class="resume-item-title">${esc(e.school)}</span>
+            <span class="resume-item-period">${esc(e.period)}</span>
+          </div>
+          <div class="resume-item-sub">${esc(e.major)} · ${esc(e.degree)}</div>
+        </div>`
+      )
+      .join("");
+
+    const projPoints = R.project.points
+      .map((t) => `<li>${esc(t)}</li>`)
+      .join("");
+    const proj = `
+      <div class="resume-item">
+        <div class="resume-item-head">
+          <span class="resume-item-title">${esc(R.project.title)}</span>
+        </div>
+        <ul class="resume-list">${projPoints}</ul>
+      </div>`;
+
+    const works = R.works
+      .map((w) => {
+        const items = w.items.map((t) => `<li>${esc(t)}</li>`).join("");
+        return `
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <span class="resume-item-title">${esc(w.category)}</span>
+          </div>
+          <ul class="resume-list">${items}</ul>
+        </div>`;
+      })
+      .join("");
+
+    const internPoints = R.internship.points
+      .map((t) => `<li>${esc(t)}</li>`)
+      .join("");
+    const intern = `
+      <div class="resume-item">
+        <div class="resume-item-head">
+          <span class="resume-item-title">${esc(R.internship.title)}</span>
+          <span class="resume-item-period">${esc(R.internship.period)}</span>
+        </div>
+        <ul class="resume-list">${internPoints}</ul>
+      </div>`;
+
+    el("about-content").innerHTML = `
+      <div class="resume-header">
+        <div class="resume-name">${esc(S.name)}<span class="resume-role">意向岗位：${esc(S.role)}</span></div>
+        <div class="resume-line">电话：${esc(S.contact.phone)}　邮箱：${esc(S.contact.email)}</div>
+        <div class="resume-line">性别：${esc(S.gender)}　年龄：${esc(S.age)}　最高学历：${esc(S.highestDegree)}</div>
+      </div>
+      <p class="resume-positioning">${esc(D.positioning)}</p>
+      <div class="resume-section-title">教育经历</div>
+      ${edu}
+      <div class="resume-section-title">项目经历</div>
+      ${proj}
+      <div class="resume-section-title">个人作品</div>
+      ${works}
+      <div class="resume-section-title">实习经历</div>
+      ${intern}`;
   }
 
   /* ---------- 分区 tab 切换 ---------- */
@@ -164,72 +230,6 @@
       .join("");
   }
 
-  /* ---------- 简历 ---------- */
-  function renderResume() {
-    const R = D.resume;
-    let html = "";
-
-    // 教育经历
-    const edu = R.education
-      .map(
-        (e) => `
-        <div class="resume-block">
-          <div class="resume-head">
-            <span class="resume-title">${esc(e.school)}</span>
-            <span class="resume-period">${esc(e.period)}</span>
-          </div>
-          <div class="resume-sub">${esc(e.major)} · ${esc(e.degree)}</div>
-        </div>`
-      )
-      .join("");
-
-    // 项目经历
-    const projPoints = R.project.points
-      .map((t) => `<li>${esc(t)}</li>`)
-      .join("");
-    const proj = `
-      <div class="resume-block">
-        <div class="resume-cat">项目经历</div>
-        <div class="resume-head">
-          <span class="resume-title">${esc(R.project.title)}</span>
-        </div>
-        <ul class="resume-list">${projPoints}</ul>
-      </div>`;
-
-    // 个人作品
-    const works = R.works
-      .map((w) => {
-        const items = w.items.map((t) => `<li>${esc(t)}</li>`).join("");
-        return `<div class="resume-cat">${esc(w.category)}</div>
-          <ul class="resume-list">${items}</ul>`;
-      })
-      .join("");
-
-    // 实习经历
-    const internPoints = R.internship.points
-      .map((t) => `<li>${esc(t)}</li>`)
-      .join("");
-    const intern = `
-      <div class="resume-block">
-        <div class="resume-cat">实习经历</div>
-        <div class="resume-head">
-          <span class="resume-title">${esc(R.internship.title)}</span>
-          <span class="resume-period">${esc(R.internship.period)}</span>
-        </div>
-        <ul class="resume-list">${internPoints}</ul>
-      </div>`;
-
-    html = `
-      <div class="resume-cat">教育经历</div>
-      ${edu}
-      ${proj}
-      <div class="resume-cat">个人作品</div>
-      ${works}
-      ${intern}`;
-
-    el("resume-content").innerHTML = html;
-  }
-
   /* ---------- 联系与下载 ---------- */
   function renderContact() {
     const c = D.site.contact;
@@ -259,7 +259,6 @@
     bindProjectToggle();
     renderFramework();
     renderGames();
-    renderResume();
     renderContact();
     bindNav();
     showSection("about");

@@ -87,6 +87,7 @@ a {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 24px;
 }
 
@@ -514,65 +515,97 @@ a {
   font-size: 13px;
 }
 
-/* ---------- 简历 ---------- */
-.resume-block {
-  margin-bottom: 28px;
+/* ---------- 关于我 / 简历 ---------- */
+.resume-header {
+  margin-bottom: 8px;
 }
 
-.resume-block:last-child {
-  margin-bottom: 0;
+.resume-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
 }
 
-.resume-head {
+.resume-role {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-left: 14px;
+  letter-spacing: 0;
+}
+
+.resume-line {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.resume-positioning {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 16px 0 6px;
+}
+
+.resume-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 26px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-item {
+  margin-bottom: 12px;
+}
+
+.resume-item-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
-.resume-title {
-  font-size: 18px;
+.resume-item-title {
+  font-size: 16px;
   font-weight: 700;
   color: var(--text);
 }
 
-.resume-period {
+.resume-item-period {
   color: var(--text-faint);
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.resume-sub {
+.resume-item-sub {
   color: var(--text-secondary);
   font-size: 14px;
-  margin-bottom: 6px;
 }
 
 .resume-list {
   list-style: none;
+  margin: 6px 0 0;
 }
 
 .resume-list li {
   position: relative;
-  padding-left: 18px;
-  margin-bottom: 6px;
+  padding-left: 16px;
+  margin-bottom: 5px;
   color: var(--text-secondary);
   font-size: 15px;
+  line-height: 1.7;
 }
 
 .resume-list li::before {
-  content: "—";
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--text-faint);
-}
-
-.resume-cat {
-  font-weight: 700;
-  color: var(--text);
-  font-size: 15px;
-  margin: 14px 0 8px;
 }
 
 /* ---------- 联系 ---------- */
