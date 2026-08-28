@@ -262,13 +262,13 @@ a {
 }
 
 .project-subtitle {
-  color: var(--text-faint);
+  color: #6B7280;
   font-size: 13px;
   margin-bottom: 10px;
 }
 
 .project-overview {
-  color: var(--text-secondary);
+  color: #3C424B;
   font-size: 14px;
   line-height: 1.75;
   margin-top: 12px;
@@ -338,7 +338,7 @@ a {
 }
 
 .project-article {
-  color: var(--text-secondary);
+  color: #2B2F35;
   font-size: 15px;
   line-height: 1.85;
   max-width: 820px;
@@ -406,7 +406,7 @@ a {
 }
 
 .md-table td {
-  color: var(--text-secondary);
+  color: #3C424B;
 }
 
 .md-img {
