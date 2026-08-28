@@ -1,10 +1,10 @@
 /* =========================================================================
  * 在线试用（tryout.js）
  * -------------------------------------------------------------------------
- * 为「游戏玩家舆情智能分析 Agent」项目提供在线试用入口。纯前端实现，
- * 无后端、不经过任何服务器：
+ * 为「游戏玩家舆情智能分析 Agent」「古籍书目智能匹配系统」两个项目提供
+ * 在线试用入口。纯前端实现，无后端、不经过任何服务器：
  *   - 演示版：回放预跑好的真实结果，零成本零风险。
- *   - 自助体验：面试官自填 API Key，浏览器直连模型厂商，Key 仅存本机浏览器。
+ *   - 自助体验（仅舆情 Agent）：面试官自填 API Key，浏览器直连模型厂商，Key 仅存本机浏览器。
  * 数据全部来自真实预跑结果，见各字段注释。
  * ========================================================================= */
 
@@ -203,6 +203,50 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
         ],
       },
     },
+
+    /* ===== A2 古籍 Agent（仅演示版，回放预跑结果，不暴露规则与代码细节） ===== */
+    "ancient-books": {
+      title: "古籍书目智能匹配系统",
+      demo: {
+        steps: ["输入书目", "预处理", "7 层规则扫描", "LLM 裁决", "输出结果"],
+        // 以下案例来自《隋书·经籍志》《旧唐书·经籍志》人工校对正确匹配版
+        cases: [
+          {
+            name: "异名匹配",
+            sui: { title: "史记音义", author: "徐野民", volumes: "12" },
+            candidates: [
+              { title: "史记音义", author: "徐广", volumes: "13" },
+              { title: "史记音义", author: "邹诞生", volumes: "3" },
+              { title: "史记", author: "司马迁", volumes: "130" },
+            ],
+            matched: "《史记音义》— 徐广",
+            detail: "徐野民即徐广（作者异名），卷数 12 → 13（增 1）",
+          },
+          {
+            name: "精确匹配",
+            sui: { title: "汉书", author: "班固", volumes: "115" },
+            candidates: [
+              { title: "汉书", author: "班固", volumes: "115" },
+              { title: "汉书集解音义", author: "应劭", volumes: "24" },
+              { title: "汉书音义", author: "韦昭", volumes: "7" },
+            ],
+            matched: "《汉书》— 班固",
+            detail: "书名、作者、卷数完全一致，卷数 115 → 115（不变）",
+          },
+          {
+            name: "无匹配",
+            sui: { title: "汉书音", author: "刘显", volumes: "2" },
+            candidates: [
+              { title: "汉书音", author: "萧该", volumes: "12" },
+              { title: "汉书音", author: "包恺", volumes: "12" },
+              { title: "汉书音", author: "夏侯泳", volumes: "2" },
+            ],
+            matched: "无匹配",
+            detail: "旧唐志中未见刘显对应书目，返回空",
+          },
+        ],
+      },
+    },
   };
 
   /* ---------- 工具 ---------- */
@@ -283,6 +327,9 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
     const overlay = ensureOverlay();
     overlay.querySelector("#tryout-title").textContent =
       TRYOUT_DATA[id].title + " · 在线试用";
+    // 自助体验 tab 仅对有 byok 配置的项目显示（古籍只留演示版）
+    const byokTab = overlay.querySelector('[data-tab="byok"]');
+    byokTab.hidden = !TRYOUT_DATA[id].byok;
     overlay.querySelectorAll(".tryout-tab").forEach((t) =>
       t.classList.toggle("active", t.getAttribute("data-tab") === "demo")
     );
@@ -329,7 +376,9 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
   }
 
   function renderDemoResult() {
-    return renderSentimentResult(TRYOUT_DATA[currentId].demo);
+    const d = TRYOUT_DATA[currentId].demo;
+    if (currentId === "sentiment-agent") return renderSentimentResult(d);
+    return renderAncientResult(d);
   }
 
   function renderSentimentResult(d) {
@@ -366,6 +415,33 @@ negative_samples 是你判定为真正负面/有风险的样本编号列表（�
       <div class="demo-risks">${risks}</div>
       <div class="demo-section-title">运营建议</div>
       <ol class="demo-advice">${advice}</ol>`;
+  }
+
+  function renderAncientResult(d) {
+    const cases = d.cases
+      .map(
+        (c) => `
+        <div class="demo-ancient-case">
+          <div class="demo-ancient-name">${esc(c.name)}</div>
+          <div class="demo-ancient-row">
+            <span class="demo-ancient-label">隋志</span>
+            <span>《${esc(c.sui.title)}》— ${esc(c.sui.author)} — ${esc(c.sui.volumes)}卷</span>
+          </div>
+          <div class="demo-ancient-row">
+            <span class="demo-ancient-label">候选</span>
+            <span>${c.candidates
+              .map((x) => `《${esc(x.title)}》— ${esc(x.author)}`)
+              .join(" · ")}</span>
+          </div>
+          <div class="demo-ancient-row">
+            <span class="demo-ancient-label">裁决</span>
+            <strong>${esc(c.matched)}</strong>
+          </div>
+          <div class="demo-ancient-detail">${esc(c.detail)}</div>
+        </div>`
+      )
+      .join("");
+    return `<div class="demo-ancient-list">${cases}</div>`;
   }
 
   function runDemo() {

@@ -915,6 +915,47 @@ a {
   color: var(--text-secondary);
 }
 
+/* ---------- 演示版：古籍案例 ---------- */
+.demo-ancient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.demo-ancient-case {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.demo-ancient-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.demo-ancient-row {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  margin: 4px 0;
+  color: var(--text);
+}
+
+.demo-ancient-label {
+  flex-shrink: 0;
+  width: 40px;
+  color: var(--text-faint);
+  font-size: 13px;
+}
+
+.demo-ancient-detail {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
 /* ---------- 自助体验（BYOK） ---------- */
 .byok-config {
   display: grid;
