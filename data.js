@@ -59,6 +59,7 @@ const SITE_DATA = {
       title: "游戏玩家舆情智能分析 Agent",
       subtitle: "小红书 / B站 双平台",
       tags: ["AI 工具开发", "规则 + 模型混合", "风险分级", "知识库维护"],
+      tryout: true,
     },
 
     {
@@ -67,6 +68,7 @@ const SITE_DATA = {
       title: "古籍书目智能匹配系统",
       subtitle: "《隋书·经籍志》 ×《旧唐书·经籍志》",
       tags: ["规则分层 + LLM 判决", "技术选型", "成本控制", "产品化"],
+      tryout: true,
     },
 
     /* ===== 产品分析类 ===== */

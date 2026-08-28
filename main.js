@@ -131,6 +131,10 @@
       .map((s) => `<p>${esc(s)}</p>`)
       .join("");
 
+    const tryoutBtn = p.tryout
+      ? `<button class="btn-tryout" type="button" data-tryout="${esc(p.id)}">在线试用</button>`
+      : "";
+
     return `
       <article class="project-card" data-id="${esc(p.id)}">
         <div class="project-card-head">
@@ -140,7 +144,10 @@
             <div class="project-meta">${tags}</div>
             <div class="project-overview">${overview}</div>
           </div>
-          <span class="project-toggle">＋</span>
+          <div class="project-actions">
+            ${tryoutBtn}
+            <span class="project-toggle">＋</span>
+          </div>
         </div>
         <div class="project-detail">${buildProjectDetail(p)}</div>
       </article>`;
@@ -192,6 +199,17 @@
     }
   }
 
+  /* 在线试用按钮 */
+  function bindTryout() {
+    document.querySelectorAll("[data-tryout]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const id = btn.getAttribute("data-tryout");
+        if (window.TRYOUT) window.TRYOUT.open(id);
+      });
+    });
+  }
+
   /* ---------- 游戏经历 ---------- */
   function renderGames() {
     const container = el("game-groups");
@@ -240,6 +258,7 @@
     renderAbout();
     renderProjects();
     bindProjectToggle();
+    bindTryout();
     renderGames();
     renderContact();
     bindNav();
