@@ -588,8 +588,31 @@ a {
     font-size: 26px;
   }
 
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
   .nav-links {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    flex-shrink: 0;
+    font-size: 13px;
   }
 
   .project-card {
