@@ -78,7 +78,7 @@
 
     el("about-content").innerHTML = `
       <div class="resume-header">
-        <div class="resume-name">${esc(S.name)}<span class="resume-role">意向岗位：${esc(S.role)}</span></div>
+        <div class="resume-name">${esc(S.name)}</div>
         <div class="resume-line">电话：${esc(S.contact.phone)}　邮箱：${esc(S.contact.email)}</div>
         <div class="resume-line">性别：${esc(S.gender)}　年龄：${esc(S.age)}　最高学历：${esc(S.highestDegree)}</div>
       </div>

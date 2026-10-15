@@ -13,7 +13,6 @@ const SITE_DATA = {
   /* ---------- 站点与个人信息 ---------- */
   site: {
     name: "赵芷欣",
-    role: "游戏运营",
     gender: "女",
     age: "23",
     highestDegree: "硕士",
@@ -127,9 +126,9 @@ const SITE_DATA = {
     {
       category: "二次元游戏",
       items: [
-        { name: "崩坏·星穹铁道", detail: "1120 天" },
+        { name: "崩坏·星穹铁道", detail: "1170 天" },
         { name: "崩坏3", detail: "572 天" },
-        { name: "绝区零", detail: "249 天" },
+        { name: "绝区零", detail: "276 天" },
         { name: "明日方舟" },
         { name: "重返未来：1999" },
         { name: "忘却前夜" }
@@ -147,8 +146,8 @@ const SITE_DATA = {
       category: "独立游戏",
       items: [
         { name: "星露谷", detail: "110h+" },
-        { name: "杀戮尖塔", detail: "30h+" },
-        { name: "Balatro 小丑牌", detail: "20h+" },
+        { name: "杀戮尖塔", detail: "50h+" },
+        { name: "Balatro 小丑牌", detail: "30h+" },
         { name: "极乐迪斯科", detail: "20h+" },
         { name: "火山的女儿" },
         { name: "露玛岛" },
@@ -158,7 +157,7 @@ const SITE_DATA = {
     {
       category: "开放世界",
       items: [
-        { name: "原神", detail: "1580 天" },
+        { name: "原神", detail: "1634 天" },
         { name: "无限暖暖", detail: "320 天" },
         { name: "燕云十六声" }
       ]
