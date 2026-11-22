@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用说明 · 游戏舆情速览</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>游戏舆情速览工具 · 应用说明</h1>
+    <p class="subtitle">如何运用本工具快速定位可能出现的舆情。</p>
+    <a class="guide-link" href="index.html">← 返回工具</a>
+  </header>
+
+  <div class="guide">
+
+    <section class="panel">
+      <h2><span class="no">一、</span>工具定位</h2>
+      <p>游戏舆情速览工具面向游戏运营的<strong>舆情初筛</strong>场景，从批量玩家帖中定位<strong>可能需要关注的舆情信号</strong>。</p>
+      <p>适用场景：<span class="hl">版本更新、活动上线后，快速掌握玩家的讨论焦点与负面苗头</span>。</p>
+      <p>工具以纯规则方式在浏览器本地完成「清洗 → 找信号 → 评分」，输出<strong>按优先度排序的信号列表</strong>，作为舆情研判的入口。</p>
+    </section>
+
+    <section class="panel">
+      <h2><span class="no">二、</span>可识别的舆情类型</h2>
+      <p>工具从四个维度识别可能构成舆情的信号：</p>
+      <ol class="guide-list">
+        <li><strong>敏感与负面表述的直接命中</strong>：标题出现敏感词或负面情绪词，且与具体游戏内容共现。</li>
+        <li><strong>负面情绪指向具体对象</strong>：负面词与角色、玩法、版本等实体在标题中共现，用以定位负面情绪所指向的对象。</li>
+        <li><strong>高频新词</strong>：一批帖子中集中出现、但词库尚未收录的词，可能是新梗或新争议点。</li>
+        <li><strong>游戏内容的讨论规模</strong>：已确认实体（角色、玩法）的讨论规模，用以判断讨论的量级。</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2><span class="no">三、</span>使用流程</h2>
+      <ol class="guide-steps">
+        <li><strong>选定数据</strong>：选择预置示例数据，或上传含「标题、正文、平台」三字段的表格（支持 CSV 与 Excel）。</li>
+        <li><strong>查看信号列表</strong>：信号按评分从高到低排列，<span class="hl">优先查看排序靠前的信号</span>。</li>
+        <li><strong>核对信号三要素</strong>：每个信号展示规模（关联帖子数）、覆盖平台、样本标题。</li>
+        <li><strong>判断性质</strong>：依据样本标题区分<strong>集中负面</strong>与攻略、强度等正常讨论。</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2><span class="no">四、</span>评分与排序</h2>
+      <p>评分反映信号的<strong>综合优先度</strong>，由四个维度加权合成：</p>
+      <p class="score-formula">声量与跨平台 ＋ 情绪强度 ＋ 情绪密度 ＋ 实体可信度与规模</p>
+      <div class="callout">评分越高，表示该信号越值得优先关注；评分用于排序，<strong>不代表负面严重程度的绝对高低</strong>。</div>
+    </section>
+
+    <section class="panel">
+      <h2><span class="no">五、</span>工具边界与后续精判</h2>
+      <p>工具为纯规则实现，负责识别可疑信号，不调用大模型。情绪与风险的<strong>精判在 Python 端由 LLM 完成</strong>。</p>
+      <p>词库（敏感词、负面词、黑话、停用词）随新数据持续补充，以降低漏判与误判。</p>
+      <p>完整流程「爬取 → 清洗 → 找信号 → 评分 → LLM 精判 → 定级 → 日报」的最终产出为 LLM 精判日报，在工具页选中示例数据后，于结果区查看对应主题的日报。</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>游戏舆情速览 · 纯规则演示版</p>
+  </footer>
+</body>
+</html>

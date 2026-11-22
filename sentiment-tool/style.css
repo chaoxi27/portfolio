@@ -1,0 +1,176 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f5f6f8;
+  color: #2b2f36;
+  line-height: 1.6;
+  padding: 24px 16px 48px;
+}
+
+header { max-width: 900px; margin: 0 auto 20px; }
+h1 { font-size: 24px; }
+.subtitle { color: #6b7280; font-size: 14px; margin-top: 6px; }
+
+.panel {
+  max-width: 900px;
+  margin: 0 auto 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.theme-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.theme-label { font-size: 13px; color: #6b7280; flex-shrink: 0; }
+.theme-btn {
+  padding: 6px 14px;
+  background: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.theme-btn:hover { background: #e0e7ff; }
+.theme-btn.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+
+.input-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.game-select {
+  padding: 7px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #374151;
+  background: #fff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover { background: #1d4ed8; }
+
+.data-label { color: #6b7280; font-size: 13px; margin-bottom: 12px; }
+.hint { color: #9ca3af; font-size: 12px; margin-top: 10px; }
+
+.stats { display: block; }
+.stats-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.stat {
+  flex: 1 1 120px;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 10px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+.stat .num { font-size: 26px; font-weight: 600; }
+.stat .label { font-size: 12px; color: #6b7280; }
+h2 { font-size: 16px; margin-bottom: 12px; }
+.empty { color: #9ca3af; font-size: 14px; }
+
+.signal-list { display: flex; flex-direction: column; gap: 10px; }
+
+.signal-card {
+  border-left: 4px solid #9ca3af;
+  border-radius: 6px;
+  padding: 12px 14px;
+  background: #f9fafb;
+}
+.signal-head { display: flex; align-items: center; gap: 10px; }
+.signal-entity { font-weight: 600; font-size: 15px; }
+
+.signal-meta { color: #6b7280; font-size: 13px; margin: 4px 0 8px; }
+
+.signal-samples { list-style: none; }
+.signal-samples li {
+  font-size: 13px;
+  color: #374151;
+  padding: 3px 0 3px 12px;
+  position: relative;
+}
+.signal-samples li::before {
+  content: "·";
+  position: absolute; left: 2px;
+  color: #9ca3af;
+}
+.plat-tag {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.4;
+  padding: 0 5px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+.plat-tag.xhs { background: #fef2f2; color: #dc2626; }
+.plat-tag.bili { background: #eff6ff; color: #2563eb; }
+
+footer { max-width: 900px; margin: 24px auto 0; }
+footer p { color: #9ca3af; font-size: 12px; }
+
+/* —— 使用说明入口 —— */
+.guide-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #2563eb;
+  font-size: 13px;
+  text-decoration: none;
+}
+.guide-link:hover { text-decoration: underline; }
+.link-sep { color: #9ca3af; margin: 0 6px; }
+
+/* —— LLM 精判日报入口（结果区上方） —— */
+.daily-link { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; font-size: 13px; color: #6b7280; }
+.daily-link-label { color: #6b7280; }
+.daily-btn { font-size: 13px; padding: 7px 16px; }
+.daily-link a.daily-btn { color: #fff; text-decoration: none; }
+.daily-link a.daily-btn:hover { color: #fff; text-decoration: none; }
+
+/* —— 使用说明页 —— */
+.guide { max-width: 900px; margin: 0 auto; }
+.guide h2 { font-size: 18px; margin: 20px 0 10px; }
+.guide p { font-size: 14px; margin: 8px 0; color: #374151; }
+.guide strong { color: #1d4ed8; }
+.hl { background: #fef9c3; padding: 0 3px; border-radius: 2px; }
+
+.guide-list, .guide-steps { margin: 10px 0 10px 20px; }
+.guide-list li, .guide-steps li { font-size: 14px; margin: 8px 0; color: #374151; }
+
+.score-formula {
+  text-align: center;
+  font-size: 15px;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 12px 0;
+}
+
+.callout {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #374151;
+  margin: 12px 0;
+}
+
+/* —— 示例数据 vs 上传表格 分区 —— */
+.panel-title { font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 12px; }
+
+.upload-panel { background: #f0fdf4; border-color: #bbf7d0; }
+
+.upload-btn, .parse-btn { background: #16a34a; }
+.upload-btn:hover, .parse-btn:hover { background: #15803d; }
+.parse-btn:disabled { background: #d1d5db; cursor: not-allowed; }
+
+.parse-row { margin-top: 12px; }
+.upload-status { color: #6b7280; font-size: 13px; }
+.upload-note { color: #15803d; }

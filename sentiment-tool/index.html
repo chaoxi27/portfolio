@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游戏舆情速览 · 纯规则版</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>游戏舆情速览</h1>
+    <p class="subtitle">点预置数据或上传表格，在浏览器里跑完「清洗 → 找信号 → 评分」。</p>
+    <a class="guide-link" href="guide.html">使用说明 →</a>
+  </header>
+
+  <section class="panel sample-panel">
+    <div class="panel-title">示例数据</div>
+    <div class="theme-row">
+      <div id="theme-bar"></div>
+    </div>
+    <p class="hint">点上方示例数据，在浏览器里跑完「清洗 → 找信号 → 评分」。</p>
+  </section>
+
+  <section class="panel upload-panel">
+    <div class="panel-title">上传表格</div>
+    <div class="input-row">
+      <label class="btn upload-btn" for="file-input">选择表格</label>
+      <input type="file" id="file-input" accept=".csv,.xlsx,.xls" hidden>
+      <select id="game-select" class="game-select" title="上传数据所属游戏，决定使用哪套词库">
+        <option value="starrail">崩坏：星穹铁道</option>
+        <option value="genshin">原神</option>
+      </select>
+      <span id="upload-status" class="upload-status">未选择文件</span>
+    </div>
+    <div class="parse-row">
+      <button id="parse-btn" class="btn parse-btn" disabled>开始解析</button>
+    </div>
+    <p class="hint">表格请含「标题」列，可带「正文」「平台」列（平台填 小红书 或 B站）。支持 CSV 与 Excel（.xlsx）。</p>
+    <p class="hint upload-note">上传数据仅跑规则版（清洗 → 找信号 → 评分），不调用 LLM 精判，也不生成 LLM 日报。</p>
+  </section>
+
+  <section class="panel stats">
+    <div id="data-label" class="data-label">还没有数据</div>
+    <div class="stats-row">
+      <div class="stat"><span class="num" id="stat-raw">–</span><span class="label">原始记录</span></div>
+      <div class="stat"><span class="num" id="stat-clean">–</span><span class="label">清洗后</span></div>
+      <div class="stat"><span class="num" id="stat-excluded">–</span><span class="label">过滤条数</span></div>
+      <div class="stat"><span class="num" id="stat-signals">–</span><span class="label">信号</span></div>
+    </div>
+    <div id="daily-link" class="daily-link"></div>
+  </section>
+
+  <section class="panel">
+    <h2>信号列表</h2>
+    <div id="signal-list" class="signal-list">
+      <p class="empty">点预置数据或上传表格开始。</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>本页为纯规则演示：信号由规则发现，情绪与风险精判在 Python 端由 LLM 完成。</p>
+  </footer>
+
+  <script src="data/lexicon.js"></script>
+  <script src="data/sample_data.js"></script>
+  <script src="lib/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

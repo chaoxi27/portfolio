@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游戏舆情速览 · LLM 日报 · 原神至冬</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .report { max-width: 900px; }
+    .report h1 { font-size: 22px; margin: 0 0 14px; }
+    .report h2 { font-size: 17px; margin: 20px 0 10px; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+    .report h3 { font-size: 15px; margin: 16px 0 8px; }
+    .report p { font-size: 13px; color: #374151; margin: 7px 0; }
+    .report hr { border: none; border-top: 1px solid #e5e7eb; margin: 18px 0; }
+    .report blockquote { background: #f9fafb; border-left: 4px solid #d1d5db; border-radius: 4px; padding: 8px 12px; margin: 10px 0; color: #6b7280; font-size: 13px; }
+    .report table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 13px; }
+    .report th, .report td { border: 1px solid #e5e7eb; padding: 7px 10px; text-align: left; vertical-align: top; }
+    .report th { background: #f9fafb; font-weight: 600; }
+    .report code { background: #f3f4f6; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+    .report ol.sample-list { margin: 8px 0 10px 22px; }
+    .report ol.sample-list li { font-size: 13px; margin: 5px 0; color: #374151; }
+    .report .sample-body { margin: 3px 0 3px 0; padding-left: 12px; border-left: 2px solid #e5e7eb; color: #6b7280; font-size: 12px; }
+    .tag { display: inline-block; font-size: 11px; line-height: 1.4; padding: 0 5px; border-radius: 3px; margin-right: 3px; }
+    .tag-neg { background: #fef2f2; color: #dc2626; }
+    .tag-ok { background: #f0fdf4; color: #16a34a; }
+    .tag-warn { background: #fffbeb; color: #d97706; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>游戏舆情速览 · LLM 日报 · 原神至冬</h1>
+    <p class="subtitle">完整流程「爬取 → 清洗 → 找信号 → 评分 → LLM 精判 → 定级 → 日报」的最终产出。</p>
+    <a class="guide-link" href="index.html">← 返回工具</a>
+  </header>
+
+  <div class="report panel">
+<h1>舆情预警日报</h1>
+<p><strong>生成时间</strong>：2026-11-22 16:11:58</p>
+<p><strong>数据来源</strong>：原神至冬(网页信号)</p>
+<p><strong>数据规模</strong>：1004 条帖子（去重清洗后）</p>
+<p><strong>LLM 状态</strong>：<span class='tag tag-ok'>[OK]</span> 可用</p>
+<hr>
+<h2>速览简报</h2>
+<blockquote>本次未发现需关注的舆情信号。</blockquote>
+<h3>LLM 判安全，无需关注（共 18 组，速览列前 5）</h3>
+<table><tr><th>实体</th><th>程序评分</th><th>LLM 判断</th></tr><tr><td>女皇</td><td>4.6</td><td>该信号主要为B站用户围绕《原神》7.2至冬/女皇相关剧情、reaction和二创的讨论，未见举报、投诉或冲官方等行动信号。</td></tr><tr><td>米提亚</td><td>4.3</td><td>米提亚相关讨论以攻略、二创和强度测评为主，存在少量对角色低命体验和bug的负面反馈，无组织行动或举报投诉迹象。</td></tr><tr><td>钟离</td><td>3.7</td><td>样本主要是玩家对钟离在7.2至冬剧情中高光表现的正面反应、Reaction和切片，情绪积极。</td></tr><tr><td>天理</td><td>3.4</td><td>围绕天理的主线剧情解析与二创内容为主，少量吐槽剧情逻辑，无行动信号</td></tr><tr><td>世界任务</td><td>3.0</td><td>该信号主要为B站原神至冬世界任务攻略与剧情解析视频，整体为中性偏正面内容，无行动信号或负面情绪。</td></tr></table>
+<hr>
+<h2>一、数据概览</h2>
+<table><tr><th>指标</th><th>数值</th></tr><tr><td>处理帖子总数</td><td>1004</td></tr><tr><td>信号组总数</td><td>18</td></tr><tr><td>高优先级(敏感词/负面)</td><td>0 组</td></tr><tr><td>跨平台信号</td><td>0 组</td></tr><tr><td>含敏感词</td><td>0 组</td></tr><tr><td>送 LLM 精判</td><td>18 组</td></tr></table>
+<h3>LLM 风险等级分布</h3>
+<table><tr><th>等级</th><th>数量</th></tr><tr><td><span class='tag tag-neg'>[!]</span> 高风险</td><td>0</td></tr><tr><td><span class='tag tag-warn'>[~]</span> 可能发酵</td><td>0</td></tr><tr><td><span class='tag tag-ok'>[OK]</span> 普通讨论</td><td>18</td></tr><tr><td>未评估</td><td>0</td></tr></table>
+<h3>预警等级分布</h3>
+<table><tr><th>预警</th><th>数量</th></tr><tr><td>[RED] 红色预警</td><td>0</td></tr><tr><td>[ORANGE] 橙色预警</td><td>0</td></tr><tr><td>[YELLOW] 黄色预警</td><td>0</td></tr><tr><td>[BLUE] 蓝色</td><td>18</td></tr></table>
+<hr>
+<h2>二、需关注信号详情</h2>
+<blockquote>本次未发现需关注的舆情信号。</blockquote>
+<hr>
+<h2>三、LLM 精判聚类详情</h2>
+<p>以下为送 LLM 精判的所有信号，含完整 LLM 评估结果和样本标注。</p>
+<h3>1. <span class='tag tag-ok'>[OK]</span> 普通讨论 女皇</h3>
+<p>信源=正常讨论（黑话实体） | 规模=70 条 (7.0%) | 评分=4.6</p>
+<p><strong>LLM 摘要</strong>：该信号主要为B站用户围绕《原神》7.2至冬/女皇相关剧情、reaction和二创的讨论，未见举报、投诉或冲官方等行动信号。</p>
+<p><strong>LLM 依据</strong>：样本多数为剧情演绎、解析或视频推广，仅个别如[8]对叙事节奏和角色塑造提出批评，负面样本数量少且无组织行动，不符合高风险或可能发酵条件。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>罕见的冰之愤怒!女皇听闻军处大臣把军用设备谎报成民用后罕见龙颜大不悦!要严查督办此乱象追捕违法大臣!<div class='sample-body'>冰之愤怒（）从没见过如此愤怒的女皇陛下 你管着叫军用？！ 有点像是对至冬军队的叛徒进行清洗</div></li>
+<li>【原神/熟肉】本来还想给天理说话的屠鸟哥，上天空岛后得知真相直接开骂！！！（7.2主线冰之女皇CG+登上天空岛反应精剪）<div class='sample-body'>www.twitch.tv/murderofbirdswww.twitch.tv/murderofbirds</div></li>
+<li>什么叫女皇发动了十月革命？《原神》至冬到底是沙俄还是苏联</li>
+<li>顶级的语言艺术！克苟用一节课的时间带你细品提瓦特七国会议上的人情世故：离女皇越远的关系和至冬越不好！近的相对融洽！你看看这个温迪这个表情这个话术！都是人精啊hh<div class='sample-body'>已获授权 关注克利咕咕兰谢谢喵：https://space.bilibili.com/809048?spm_id_from=333.337.0.0 克利咕咕兰的直播间：https://live.bil…</div></li>
+<li>至冬爆发军械走私大案，女皇震怒派旅行者下场调查！「冰宫密令」上演至冬的名义！<div class='sample-body'>好，此次测试，由旅行者主持。众卿的意见如何?</div></li>
+<li>原神史上最炸裂的会面！七神执政齐聚至冬宫开会！温迪果然是装弱配合女皇表演！那维莱特和众人气氛凝重随后和解合作！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>冰宫密令-旅行者和女皇的棋局解析<div class='sample-body'>我已经把残局摆好了，这是FEN 1n1k2r1/7p/prbn1p2/2qp4/R6b/P1B5/1R2N2K/8 w - - 0 1 这是网址。 https://lichess.org/editor…</div></li>
+<li><span class='tag tag-neg'>[!]</span> 【原神】卖卡挤占叙事，危机转移旧账，至冬篇到底哪里出了问题？以及一些对于女皇的个人看法<div class='sample-body'>一家之言，无意给角色定性，只是给大家作个参考，如有不同意见，请在评论区理性讨论</div></li>
+<li>女皇彻底暴怒！竟然有至冬高层擅自走私军械，还是超大「陆巡舰」？甚至还想提前转为民用糊弄女皇，结果被当场发现！女皇命令达妮卡一定要斩草除根【冰宫密令】<div class='sample-body'>瓦列里 薇斯纳 皇令顾问 丑角 木偶 桑多涅 愚人众</div></li>
+<li>神人剧情！蚊斯纳：我就打你了咋的？我有女皇给我撑腰呢你有啥？？</li>
+</ol>
+<hr>
+<h3>2. <span class='tag tag-ok'>[OK]</span> 普通讨论 米提亚</h3>
+<p>信源=高频未登录词 | 规模=45 条 (4.5%) | 评分=4.3</p>
+<p><strong>LLM 摘要</strong>：米提亚相关讨论以攻略、二创和强度测评为主，存在少量对角色低命体验和bug的负面反馈，无组织行动或举报投诉迹象。</p>
+<p><strong>LLM 依据</strong>：样本中仅第12条强度测评和第14条bug吐槽属于负面，负面数量不足且无行动信号，整体风险低，判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>不抽米提亚！挖100个专属矿[色彩绚烂的结晶]<div class='sample-body'>卡bug偷试用米提亚，采专属矿，清空专属商店</div></li>
+<li>原神7.2版本坏灭肇始之时剧情合集（更新到主线坏灭肇始之时，寄自彼岸的昨日，全域镇卫·逆捍谬罚，冰宫密令第九周，晶流与石箱的古歌谣，达妮卡米提亚聚所任务）<div class='sample-body'>会加快更新的</div></li>
+<li>【原神】至冬乱象？米提亚眼转楔，瓦列里楔转眼，达妮卡风转雷？另一种可能性？<div class='sample-body'>完整 PPT 见动态，包含本视频的主要观点，欢迎评论区讨论</div></li>
+<li>【原神】米提亚 超详细养成攻略教学<div class='sample-body'>抱歉让大家久等了！ 求硬币，求关注，感谢兄弟姐妹们！谢谢^_^ 粉丝q群：340927618 / 310251921</div></li>
+<li>【原神 析晶褶伞】共80+9个！米提亚的突破材料/至冬特产/分路线收集/贴心领跑防迷路<div class='sample-body'>米提亚的突破材料 特产刷新时间为46小时 有帮助的话还请三连支持一下！ 原神最全的攻略导航：https://www.bilibili.com/read/cv13698984</div></li>
+<li>“翩翩公子，温润如玉？” 【米提亚摄影】<div class='sample-body'>技术支持：@Ex_M</div></li>
+<li>超有趣、超灵动！原神7.0至冬演出再度大进化！新角色「米提亚」首度登场！他的围巾竟然是「活」的？不仅会做出各种表情包，还能堵米提亚的嘴？</li>
+<li>“意气风发啊 米提亚”<div class='sample-body'>创作者体验服全实机录制</div></li>
+<li>【原神】军械宫走私大案！瓦列里汉弗莱附体，米提亚这波是想进步了（第九周冰宫密令剧情吐槽）<div class='sample-body'>军械宫越级上报，绕过丑角直捅女皇，瓦列里汉弗莱附体，米提亚这波是真想进步了，至冬这套体制到底有多离谱？</div></li>
+<li>米提亚神了！顶级大c，专武必抽？冰神达妮卡实装在即！回顾芙宁娜历史？原神7.2怎抽！最懂强度的男人怎看安娜丝塔夏！桑多涅薇斯纳会被爆？揭秘原神策划的至冬布局！<div class='sample-body'>米提亚神了！顶级大c，专武必抽？回顾芙宁娜历史！ 原神怎么抽才最值？冰神达妮卡实装在即！ 最懂强度的男人怎么看安娜丝塔夏！ 桑多涅，薇斯纳会被爆吗？ 原神策划的至冬布局早已被我看穿！</div></li>
+</ol>
+<hr>
+<h3>3. <span class='tag tag-ok'>[OK]</span> 普通讨论 钟离</h3>
+<p>信源=正常讨论（黑话实体） | 规模=38 条 (3.8%) | 评分=3.7</p>
+<p><strong>LLM 摘要</strong>：样本主要是玩家对钟离在7.2至冬剧情中高光表现的正面反应、Reaction和切片，情绪积极。</p>
+<p><strong>LLM 依据</strong>：未出现举报、投诉、冲官方、12377、集体退坑等行动信号，负面样本数为0，远未达到高风险或可能发酵阈值，属于普通正面讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【至冬实况】上一秒我还在痛骂至冬，下一秒已经被钟离帅晕了，璃月速度遥遥领先<div class='sample-body'>雷电影你怎么不说话啊 ：砍了至冬执行官，砍了初生的雷龙王，还堵了人家的刷新点，又砍了有能转换光界力眷属的蛇神</div></li>
+<li>合着钟离才是原神最顶级的灯下黑？7.2中的PV诈骗！钟离压根没有完成璃月试炼？</li>
+<li>泪目了😭！爽到抓狂！树叶看钟离速通单刷判罚之钉七神试炼，尘世闲游的变奏一出差点想哭了，有一种莫名骄傲的感觉【原神7.2】</li>
+<li>又被他装到了！树叶看钟离借过天钉目瞪口呆，尘世闲游一出来差点没忍住泪目了</li>
+<li>【原神至冬主线】钟离你这家伙就算在至冬剧情也要有高光吗！！！<div class='sample-body'>层岩巨渊版本一个衣角帅了一年 这版本一个短片要帅多久呢 钟离你这家伙！！！！！ 可恶啊！！太有安全感了 钟离belike：不好意思，别耽误我过年，我赶时间</div></li>
+<li>「24人」老外看原神7.2至冬剧情全过场动画反应 reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Thejonathon/pixieebub/Richellyna/Mordex Tryhard/Zeraverso/bysammi/Komemos/atina_…</div></li>
+<li>老外看原神7.2至冬剧情全过场动画反应 七神试炼全帅炸了 reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Thejonathon/pixieebub/상덕/SipSipStefen/Zeraverso/AlexYuki ShiverDoom/Sylvan Gilmo…</div></li>
+<li>树叶看钟离速通七神试炼直接被帅呆了 BGM尘世闲游一出来没忍住开启二刷：我他喵的有点激动 一种莫名其妙的骄傲【原神7.2剧情】<div class='sample-body'>迷茫小树叶：https://space.bilibili.com/13221028</div></li>
+<li>【龙四爷】原神7.1剧情，这群像爽啊！迫不及待想看下一集了！冰神刻画的太好了，感觉比钟离还沉稳；死执掀桌子，这下七国要联合起来了<div class='sample-body'>龙四爷直播间：https://www.douyu.com/479079</div></li>
+<li>【原神/熟肉/shin】帅爆！日本魈厨看钟离打头阵拿下璃月试炼，讨论起伏笔回收（原神7.2主线「坏灭肇始之时」）<div class='sample-body'>小昭就是帝君啊（暴言）太帅了 如果有小伙伴想去shin那里留言，想小小提醒一下尽量不要发剧透或KY的内容哦(๑˃̵ᴗ˂̵) 只烤shin，欢迎查看合集，推荐：夏活系列 / 空月之歌系列 / 空之神殿 …</div></li>
+</ol>
+<hr>
+<h3>4. <span class='tag tag-ok'>[OK]</span> 普通讨论 天理</h3>
+<p>信源=高频未登录词 | 规模=35 条 (3.5%) | 评分=3.4</p>
+<p><strong>LLM 摘要</strong>：围绕天理的主线剧情解析与二创内容为主，少量吐槽剧情逻辑，无行动信号</p>
+<p><strong>LLM 依据</strong>：未发现举报/投诉/冲官方等行动信号，负面样本仅2条，未构成密集负面，属于普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【7.2主线细节解析】震撼！六年伏笔，皆是骗局！七国的僭续试炼，对天理的讨贼檄文！<div class='sample-body'>和天理签订契约，成为「原神」吧！</div></li>
+<li>【原神/熟肉】本来还想给天理说话的屠鸟哥，上天空岛后得知真相直接开骂！！！（7.2主线冰之女皇CG+登上天空岛反应精剪）<div class='sample-body'>www.twitch.tv/murderofbirdswww.twitch.tv/murderofbirds</div></li>
+<li><span class='tag tag-neg'>[!]</span> 吐槽原神7.2主线剧情 气笑了！反叛天理有正当性吗？回答我！<div class='sample-body'>这期估计会让大伙看得很爽 求大伙一个点赞三连啦 帮兔弟推下流 冲下热门！ 拜托了这是我一生的请求！！！</div></li>
+<li>【B站首翻】45名乐手共奏《至冬》主题曲，向天理宣战！<div class='sample-body'>「所有崇高的牺牲，都将铭刻于坚冰之上。」 欲获取曲谱欢迎戳https://mall.bilibili.com/neul-next/detailuniversal/detail.html?itemsId…</div></li>
+<li><span class='tag tag-neg'>[!]</span> 「天理不让」是至冬最好用的免责条款：提瓦特罪行一石八斗的账<div class='sample-body'>达妮卡女仆那句「所以女皇是对的」，听着像觉醒，其实是一份结案陈词：先把至冬的贫穷、落后、贪污、分配不均全记在天理的账上，再宣布推翻天理就是正义。 这条样片沿用清算式论证：先立「知情／自愿／有没有替代方…</div></li>
+<li>大纲彻底神了！重置一切文明！原来五年前稻妻鹤观上的壁画记录的就是鹤观先民看到提瓦特前文明被天理重置的最后一幕？六颗星星对应六颗天钉？该伏笔即将回收？<div class='sample-body'>已吓哭！又是被原神大纲和编剧吓哭了的一次（） 鹤观 原神7.2版本PV 雷电影 雷电将军 彩蛋 法涅斯 寒天之钉 米哈游 丑角 阿馏</div></li>
+<li>天理都要来了，你怎么还敢批评女皇？聊聊原神社区的“大局观”</li>
+<li>【愚论】天理怜爱世人！但提瓦特有人吗？——原神7.2主线剧情解读</li>
+<li>【原神】若娜瓦被收权能破防掀桌，至冬逆反天理是否正义？原神7.1主线解析</li>
+<li>【愚论】坎瑞亚起源终于明确，第三降临者重伤天理！</li>
+</ol>
+<hr>
+<h3>5. <span class='tag tag-ok'>[OK]</span> 普通讨论 世界任务</h3>
+<p>信源=高频未登录词 | 规模=40 条 (4.0%) | 评分=3.0</p>
+<p><strong>LLM 摘要</strong>：该信号主要为B站原神至冬世界任务攻略与剧情解析视频，整体为中性偏正面内容，无行动信号或负面情绪。</p>
+<p><strong>LLM 依据</strong>：样本均为攻略、剧情解说或直播切片，未发现投诉、举报、退坑等行动信号，负面样本为0，按规则属于普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【水无月菌/原神】啊？这么长的一段居然不是世界任务吗？水无月看归塘鲤的至冬支线解析视频 我看的还挺开心的，好的剧情解说不比番剧差<div class='sample-body'>水无月直播间地址：https://live.bilibili.com/1370218 祝你早上中午下午晚上深夜开心，开开心心看直播，轻松愉快刷切片！</div></li>
+<li>原神世界任务毛子味有多正？看完你就懂了</li>
+<li>原神7.0支线的前因后果！不知白沙皇是否会怀念在冻原驰骋的生活。【7.0世界任务梳理】<div class='sample-body'>也许因为命运从来就是这样，无论如何也会将你推至悬崖，犹如恶客来访。</div></li>
+<li>【原神】7.2剧情顺序别做错！无剧透预警！主线、世界任务和大活动用什么顺序做？/古老妖精之城/新基捷城/圣土化/魔神任务/版本活动/至冬/安娜丝塔夏/全域镇卫<div class='sample-body'>创作不易，求 点赞+投币+收藏+转发 ：） 喜欢还望点个【关注】，谢谢啦！这对我很有帮助！</div></li>
+<li>斯露德世界任务，剧情与文化原型深度解读！带你领略原神的陀思妥耶夫斯基式文学！<div class='sample-body'>7.2世界任务解读</div></li>
+<li>【原神】深渊扭曲仇恨！女儿为父亲准备的最后一场宴会｜7.2世界任务解析</li>
+<li>【原神】长峡深处的晶石城·上/至冬7.2开图主线①/不可使一切江河干涸/晶流与石箱的古歌谣·第一章/新基捷城见闻笔记/树心的棱晶/原神7.2/至冬7.2世界任务<div class='sample-body'>7.2必做前置任务： 7.2开图主线①：BV1KBxS6DEAC 7.2开图主线②：BV17dxS6uEnC 7.2开图主线③：BV1SbxS6oEZx 7.2开图主线④：BV12pxX6tEWe 7…</div></li>
+<li>[分p]林鸽不是鸽 原神7.0至冬世界任务合集【林鸽不是鸽/原神】卑劣者的穷街陋巷 在生命的寓所 爱憎的赫斯珀利德斯 一边是宫殿一边是陵阙 她的宫殿正坍塌向风雪<div class='sample-body'>林鸽不是鸽 个人空间 https://space.bilibili.com/3546597658987119 林鸽不是鸽 直播间 https://live.bilibili.com/193544676…</div></li>
+<li>【原神7.2·至冬国带任务一条龙全收集带开图】全宝箱232+冰神瞳90+世界任务+成就+影生翼滴+摩拉+玉帛+地方传奇丨新基捷城、如翼之峰丨晶流与石箱的古歌谣丨</li>
+<li>【原神大电影】「她的宫殿正坍塌向风雪」-至冬世界任务配音版剧情<div class='sample-body'>旅行者与派蒙在至冬的暴风雪中失散。旅行者独自醒来，在冰洞中发现了会说话的机关装置“灰眸”（格赖埃之眼）。灰眸自称为“抵达明日”而被制造，虽丢失了大部分记忆与身体，却仍能协助旅行者。作为交换，旅行者同意…</div></li>
+</ol>
+<hr>
+<h3>6. <span class='tag tag-ok'>[OK]</span> 普通讨论 提瓦特</h3>
+<p>信源=高频未登录词 | 规模=38 条 (3.8%) | 评分=3.0</p>
+<p><strong>LLM 摘要</strong>：该聚类主要围绕《原神》7.2版本提瓦特剧情展开二创、熟肉切片与讨论，整体为剧情解读和主播情绪反应，未见举报、投诉或集体退坑等行动。</p>
+<p><strong>LLM 依据</strong>：样本中无举报/投诉/冲官方等行动信号；明确负面样本仅第3条（正文“原神拉了”），数量不足，未达到可能发酵或高风险标准。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>足迹PV常看常新！提瓦特第八神桃纸过完原神7.2主线后再品足迹PV：我刚入坑原神那会儿！还说我是第八神呢！我不当第八神了，这都是大白话啊！<div class='sample-body'>桃纸剧情录播号：https://space.bilibili.com/1275764327/dynamic?spm_id_from=333.1365.list.card_title.click 关注小…</div></li>
+<li>顶级的语言艺术！克苟用一节课的时间带你细品提瓦特七国会议上的人情世故：离女皇越远的关系和至冬越不好！近的相对融洽！你看看这个温迪这个表情这个话术！都是人精啊hh<div class='sample-body'>已获授权 关注克利咕咕兰谢谢喵：https://space.bilibili.com/809048?spm_id_from=333.337.0.0 克利咕咕兰的直播间：https://live.bil…</div></li>
+<li><span class='tag tag-neg'>[!]</span> 这就是原神最后的下场！！我们提瓦特是不是真的要完蛋了？原神7.2版本主线剧情解析！<div class='sample-body'>原神拉了！</div></li>
+<li>「天理不让」是至冬最好用的免责条款：提瓦特罪行一石八斗的账<div class='sample-body'>达妮卡女仆那句「所以女皇是对的」，听着像觉醒，其实是一份结案陈词：先把至冬的贫穷、落后、贪污、分配不均全记在天理的账上，再宣布推翻天理就是正义。 这条样片沿用清算式论证：先立「知情／自愿／有没有替代方…</div></li>
+<li>【原神广播/熟肉/ai】提瓦特放送局 至冬通信Ver.7.2＜前野智昭×村瀬歩×中島愛×小林裕介×間宮康弘＞</li>
+<li>大纲彻底神了！重置一切文明！原来五年前稻妻鹤观上的壁画记录的就是鹤观先民看到提瓦特前文明被天理重置的最后一幕？六颗星星对应六颗天钉？该伏笔即将回收？<div class='sample-body'>已吓哭！又是被原神大纲和编剧吓哭了的一次（） 鹤观 原神7.2版本PV 雷电影 雷电将军 彩蛋 法涅斯 寒天之钉 米哈游 丑角 阿馏</div></li>
+<li>林鸽找原神7.2版本主线/活动全提瓦特彩蛋 【驰援战域 全域镇卫 逆捍谬罚】分p<div class='sample-body'>林鸽主页https://space.bilibili.com/3546597658987119</div></li>
+<li>【愚论】天理怜爱世人！但提瓦特有人吗？——原神7.2主线剧情解读</li>
+<li>一切默默无闻的细节彩蛋，构成了原神的世界！【细节彩蛋篇·提瓦特世界】<div class='sample-body'>世界一定有你未曾发现的美好，并值得我们为之而战！ 在医院做视频真的太艰难了！（但现在已出院！） 希望有你们的三连告诉我，细腻的态度真的也会吸引同样细腻的我们。 我把这些细小的美好分享与你，希望它能帮你…</div></li>
+<li>提瓦特雷电法王米提亚登场！原神二十一大顶配队伍秒杀深渊良子——浪涛锚定者</li>
+</ol>
+<hr>
+<h3>7. <span class='tag tag-ok'>[OK]</span> 普通讨论 版本前瞻节目</h3>
+<p>信源=正常讨论（黑话实体） | 规模=38 条 (3.8%) | 评分=3.0</p>
+<p><strong>LLM 摘要</strong>：话题围绕原神版本前瞻节目，样本多为官方前瞻信息、reaction视频与二创解析，整体为中性或正面讨论。</p>
+<p><strong>LLM 依据</strong>：未发现举报、投诉、冲官方、集体退坑等行动信号；样本中无明确负面内容，标题党或情绪化表达不构成风险，负面样本数低于阈值，因此判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>萌新看7.2原神前瞻：我才刚入坑原神就要大结局了！？补药啊！<div class='sample-body'>周日（10月25日）下午17点开始枫丹第五幕罪人舞步旋剧情~ 直播间：https://live.bilibili.com/25021721 如此美味的萌新请来捧捧场吧！谢谢喵！</div></li>
+<li>《原神》至冬前瞻短片 - 风雪翳蔽的冻土<div class='sample-body'>在这广袤的冻原之上，一切暗中涌动的动荡与危机终将遮掩于风雪。 不过变革终究会产生，在万物真的归于永恒的沉寂之前。 《原神》bilibili服下载地址： https://www.biligame.com…</div></li>
+<li>《原神》7.0版本「无神怜爱的雪国」前瞻特别节目<div class='sample-body'>《原神》7.0版本「无神怜爱的雪国」将于2026年8月12日上线。 感谢各位旅行者的支持与陪伴，我们将为大家带来更多7.0版本的最新消息~ 本次兑换码将于2026年8月3日12:00:00失效，记得尽…</div></li>
+<li>【𝟒𝐊/𝐇𝐢-𝐑𝐞𝐬】《至冬》原神至冬交响音乐现场 | 7.0版本前瞻特别节目「无神怜爱的雪国」<div class='sample-body'>豪庭🍷</div></li>
+<li>这BGM对味了！好听到爆！原神7.0至冬音乐提前欣赏！全新「至冬将至」H5官方小活动开启！还有六国神之心收集记录？【原神7.0前瞻】</li>
+<li>至冬历史前瞻！此地的叛逆也是一脉相承了属于是。【原神7.0至冬历史前瞻梳理】<div class='sample-body'>保健食品不是药物，不能代替药物治疗疾病 「因为火已被点起，即便传至今日的，只是那火冷却许久的坟茔」 「我们此举并非为了继承谁人的遗志，仅是为了用这火洞彻光明」 「无需惶恐，如果我们无法走入新的世界，自…</div></li>
+<li>我打谁？原神玩家看至冬7.0前瞻现状</li>
+<li>《原神》7.2版本「坏灭肇始之时」前瞻特别节目<div class='sample-body'>《原神》7.2版本「坏灭肇始之时」将于2026年11月4日上线。 感谢各位旅行者的支持与陪伴，我们将为大家带来更多7.2版本的最新消息~ 本次兑换码将于2026年10月26日12:00:00失效，记得…</div></li>
+<li>以防你没发现前瞻的正机之神<div class='sample-body'>前瞻时画面太快都没发现</div></li>
+<li>当我给原神7.2前瞻pv换成复仇者联盟bgm，对味了</li>
+</ol>
+<hr>
+<h3>8. <span class='tag tag-ok'>[OK]</span> 普通讨论 七神</h3>
+<p>信源=高频未登录词 | 规模=36 条 (3.6%) | 评分=3.0</p>
+<p><strong>LLM 摘要</strong>：样本主要为原神7.2七神会议、七神试炼等剧情切片与反应视频，情绪以兴奋、正面为主，仅第16条对剧情真相吐槽。</p>
+<p><strong>LLM 依据</strong>：未发现举报/投诉/冲官方/退坑等行动信号；负面样本仅1条，远低于5条，无组织性负面聚集，属于正常剧情讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>泪目了😭！爽到抓狂！树叶看钟离速通单刷判罚之钉七神试炼，尘世闲游的变奏一出差点想哭了，有一种莫名骄傲的感觉【原神7.2】</li>
+<li>酒桌TV：山东人带你分析七神开会的座次安排和敬酒顺序</li>
+<li>原神史上最炸裂的会面！七神执政齐聚至冬宫开会！温迪果然是装弱配合女皇表演！那维莱特和众人气氛凝重随后和解合作！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>克苟逐句解析七神会议：玛薇卡起到的是润滑剂作用！那维莱特这段的镜头语言值得其它厂商学习！<div class='sample-body'>克利咕咕兰的个人空间：https://space.bilibili.com/809048 克利咕咕兰的直播间：https://live.bilibili.com/518647</div></li>
+<li>瓦区冠军教练带你复盘七神会议！<div class='sample-body'>👍🏻4%🐭🐭💰🍕🤤🍔 ❌4%🐭🐭👎 🥔😭🍠 义父们点点赞吧 目前激励大幅度下降，赞是免费的，点赞率大于视频播放量的4%，Up就能不饿死了。 点赞是免费的，不花钱，无限点都不会有损失。但能给Up带来激励…</div></li>
+<li>树叶看七神至冬集结枫丹居然派出那维莱特直接傻眼了：不对呀这边怎么派了水龙王来！还派了个记者【原神7.2剧情】<div class='sample-body'>迷茫小树叶：https://space.bilibili.com/13221028</div></li>
+<li>老外看原神7.2至冬剧情全过场动画反应 七神试炼全帅炸了 reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Thejonathon/pixieebub/상덕/SipSipStefen/Zeraverso/AlexYuki ShiverDoom/Sylvan Gilmo…</div></li>
+<li>树叶看钟离速通七神试炼直接被帅呆了 BGM尘世闲游一出来没忍住开启二刷：我他喵的有点激动 一种莫名其妙的骄傲【原神7.2剧情】<div class='sample-body'>迷茫小树叶：https://space.bilibili.com/13221028</div></li>
+<li>【原神】龙四爷：看主线七神开会名场面，钟老爷子也太帅了吧！各种六年伏笔回收，这次主线真的爆啊！——龙四爷攻略组直播切片<div class='sample-body'>龙四爷攻略组B站主页：https://space.bilibili.com/307353874 龙四爷攻略组直播间：斗了个鱼479079，欢迎大家来聊天！</div></li>
+<li>树叶发现钟离速通七神试炼后居然在望舒客栈喝茶直接傻眼了 又被钟离装到了！【原神7.2剧情】<div class='sample-body'>迷茫小树叶：https://space.bilibili.com/13221028</div></li>
+</ol>
+<hr>
+<h3>9. <span class='tag tag-ok'>[OK]</span> 普通讨论 新基捷城</h3>
+<p>信源=高频未登录词 | 规模=33 条 (3.3%) | 评分=2.8</p>
+<p><strong>LLM 摘要</strong>：讨论集中在新基捷城相关攻略、音乐与任务流程，整体为正常内容。</p>
+<p><strong>LLM 依据</strong>：样本均为攻略、收集、剧情顺序等中性或正面内容，无行动信号且负面样本不足。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【原神一条龙全收集】至冬7.2(成就数232/冰神瞳90/摩拉69/影生翼滴15)新基捷城+如翼之峰/宝箱/摩拉堆/玉帛/冰之印/原神7.2一条龙<div class='sample-body'>本视频包含以下任务： 灯光奇异、胜者为王、送面包的好心人、覆于尘与雪、为了更甜美的未来、绿洲旁的美丽假日、酒瓶里的乌云、手中雀胜天上鹤、向肖像借一枚金币、笼兽困斗 宝箱成就总数：232 27个仙灵(2…</div></li>
+<li>【原神】7.2剧情顺序别做错！无剧透预警！主线、世界任务和大活动用什么顺序做？/古老妖精之城/新基捷城/圣土化/魔神任务/版本活动/至冬/安娜丝塔夏/全域镇卫<div class='sample-body'>创作不易，求 点赞+投币+收藏+转发 ：） 喜欢还望点个【关注】，谢谢啦！这对我很有帮助！</div></li>
+<li>【原神7.2一条龙】全宝箱（232）/冰神瞳/任务/影生翼滴/成就//观景点/玉帛/探索度一条龙,至冬/新基捷城/如翼之峰/晶石如林生长之地<div class='sample-body'>原神全道具点位地图:@原神空荧酒馆</div></li>
+<li>原神7.2版本「坏灭肇始之时」新基捷城、如翼之峰地区音乐合集<div class='sample-body'>会赢的</div></li>
+<li>【原神7.2】至冬 带任务版一条龙全收集 成就数232个 新基捷城/如翼之峰/绝境攻练/影生翼滴/地方传奇/商店/影域<div class='sample-body'>分P编号不对，网页端刷新下，手机端退出重进 地图工具：@原神空荧酒馆</div></li>
+<li>【原神】长峡深处的晶石城·上/至冬7.2开图主线①/不可使一切江河干涸/晶流与石箱的古歌谣·第一章/新基捷城见闻笔记/树心的棱晶/原神7.2/至冬7.2世界任务<div class='sample-body'>7.2必做前置任务： 7.2开图主线①：BV1KBxS6DEAC 7.2开图主线②：BV17dxS6uEnC 7.2开图主线③：BV1SbxS6oEZx 7.2开图主线④：BV12pxX6tEWe 7…</div></li>
+<li>【原神7.2】至冬 无任务版一条龙全收集 成就数232个 新基捷城/如翼之峰/绝境攻练/影生翼滴/地方传奇/商店/影域<div class='sample-body'>分P编号不对，网页端刷新下，手机端退出重进 地图工具：@原神空荧酒馆</div></li>
+<li>【原神】豪斗旅纪/厄生古树种/喧闹兽众/太古硬猬兽/地方传奇/新基捷城/如翼之峰/原神7.2/至冬7.2<div class='sample-body'>有帮助的话还请三连支持一下！ 原神最全的攻略导航：https://www.bilibili.com/read/cv13698984</div></li>
+<li>【中俄听译字幕】新基捷城 主题曲 | 俄语歌谣 高音质【4K摄影】<div class='sample-body'>4K地块摄影 | 新基捷城 Novokitezhgrad 主题曲&amp;动态壁纸 真好听~ 叠甲叠甲！：俄语字幕来自外网听译 中文翻译由我完成~ 仅可代表大意 请勿过度解读！！！ （借鉴了一下b站其他人的翻…</div></li>
+<li>【原神7.2·至冬国带任务一条龙全收集带开图】全宝箱232+冰神瞳90+世界任务+成就+影生翼滴+摩拉+玉帛+地方传奇丨新基捷城、如翼之峰丨晶流与石箱的古歌谣丨</li>
+</ol>
+<hr>
+<h3>10. <span class='tag tag-ok'>[OK]</span> 普通讨论 深境螺旋</h3>
+<p>信源=正常讨论（黑话实体） | 规模=22 条 (2.2%) | 评分=2.6</p>
+<p><strong>LLM 摘要</strong>：本期深境螺旋相关讨论以攻略、配队推荐和整活视频为主，少量帖子抱怨水温上升、旧角色缺乏环境。</p>
+<p><strong>LLM 依据</strong>：样本中未出现举报、投诉、集体退坑等行动信号；负面样本约4条，未达到高风险或可能发酵的阈值，整体属普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>原神7.2版本11.16日深境螺旋攻略，超详细机制讲解+队伍推荐！看完包会！</li>
+<li><span class='tag tag-neg'>[!]</span> 大型纪录片《7.2深境螺旋》水温有所上升，彩虹史莱姆，浪涛锚定者，冰棺首次进入深渊<div class='sample-body'>给一个免费的赞吧！让纪录片up做出更好的视频~</div></li>
+<li>原神7.2深渊之运钞车96金冲撞</li>
+<li>【原神】深渊扭曲仇恨！女儿为父亲准备的最后一场宴会｜7.2世界任务解析</li>
+<li><span class='tag tag-neg'>[!]</span> 大型纪录片《两极分化明显的深渊》，被轮椅养废了最近<div class='sample-body'>早上四点起来和隔壁末日一块打的，但早上6点多要出门上班没来得及做完，所以封面是这样的</div></li>
+<li>【原神】幻想真境剧诗 卓越+月谕难度(2026年11月)水雷岩/新深渊/平民低配满花/试用角色/超低配/幻想真境剧诗/原神7.1<div class='sample-body'>角色需求：3个高练度主C(其中1个去好友那借)+对应辅助、多个高练治疗、剩下的尽量后台挂元素的角色、其他全是挂件(挂件不是恶意侮辱角色，是代指除了试用角色和开头说的必带角色以外的其他任何角色) BUF…</div></li>
+<li><span class='tag tag-neg'>[!]</span> 略感疲态！0金6人满星11月深渊<div class='sample-body'>感谢号主@最ニ网管</div></li>
+<li>提瓦特雷电法王米提亚登场！原神二十一大顶配队伍秒杀深渊良子——浪涛锚定者</li>
+<li>原神7.2深渊:12层详情讲解+完整配队推荐(专攻打法 看完你就会 至冬7.2版本)<div class='sample-body'>希望可以帮助到更多人 感谢平台推送播放</div></li>
+<li>7.2新深渊满星教学！三金超平民阵容<div class='sample-body'>想看更多角色评测，深渊、危战实战教学的小伙伴记得点关注噢！ 直播间：https://live.bilibili.com/12384934 每天晚上8-12点基本都在播原神，有任何问题可以来直播间问，实…</div></li>
+</ol>
+<hr>
+<h3>11. <span class='tag tag-ok'>[OK]</span> 普通讨论 芙宁娜</h3>
+<p>信源=正常讨论（黑话实体） | 规模=11 条 (1.1%) | 评分=2.5</p>
+<p><strong>LLM 摘要</strong>：该信号主要围绕芙宁娜的剧情、抽卡强度讨论和玩家reaction，内容多为正面或中性，未见负面舆情或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本中无举报、投诉、冲官方等行动信号，负面样本不足5条，整体情绪积极，因此判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>一章剧情三次嗦面，芙宁娜大人我们错了！萌新入坑原神实况reaction-罪人舞步旋篇</li>
+<li>米提亚神了！顶级大c，专武必抽？冰神达妮卡实装在即！回顾芙宁娜历史？原神7.2怎抽！最懂强度的男人怎看安娜丝塔夏！桑多涅薇斯纳会被爆？揭秘原神策划的至冬布局！<div class='sample-body'>米提亚神了！顶级大c，专武必抽？回顾芙宁娜历史！ 原神怎么抽才最值？冰神达妮卡实装在即！ 最懂强度的男人怎么看安娜丝塔夏！ 桑多涅，薇斯纳会被爆吗？ 原神策划的至冬布局早已被我看穿！</div></li>
+<li>50岁主持人妈妈！芙宁娜传说轻涟震撼！太神圣美好！太起鸡皮疙瘩了！趁势抽卡显神力！</li>
+<li>芙宁娜再度履行水神之责！七神齐聚准备登上天空岛！龙身份和天理不相容！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>原神7.2主线完结后彩蛋！女皇准备找哥伦比娅帮忙！芙宁娜又一次以人类之躯比肩神明！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>芙宁娜和伊涅芙来纳塔了！有很多人逃难选择了枫丹国！他们也为难民们做了很多事！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>准备前往天空岛！这次是芙宁娜代表枫丹来了，咱芙芙也是坐上玛薇卡的摩托了哈哈【原神7.2剧情】<div class='sample-body'>七神缺一，凝光你压力大不大？</div></li>
+<li>（N5/N6向）原神7.2抽卡建议 不要制造无意义的需求 ［ 米提亚｜芙宁娜｜兹白｜莉奈娅 ］</li>
+<li>林鸽：真要选原神上天空岛会选谁？肯定不会选的！猜测芙宁娜会上天空岛收回水石头文本！【林鸽不是鸽/原神】<div class='sample-body'>林鸽不是鸽 个人空间 https://space.bilibili.com/3546597658987119 林鸽不是鸽 直播间 https://live.bilibili.com/193544676…</div></li>
+<li>水神入狱也要脱</li>
+</ol>
+<hr>
+<h3>12. <span class='tag tag-ok'>[OK]</span> 普通讨论 天钉</h3>
+<p>信源=高频未登录词 | 规模=17 条 (1.7%) | 评分=2.5</p>
+<p><strong>LLM 摘要</strong>：围绕原神7.2天钉剧情的高光片段、主播反应和剧情解析，整体为正常内容讨论与分享。</p>
+<p><strong>LLM 依据</strong>：样本均为剧情展示、反应视频或解析，未出现负面表达、投诉或行动信号，属于普通社区讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>又被他装到了！树叶看钟离借过天钉目瞪口呆，尘世闲游一出来差点没忍住泪目了</li>
+<li>大纲彻底神了！重置一切文明！原来五年前稻妻鹤观上的壁画记录的就是鹤观先民看到提瓦特前文明被天理重置的最后一幕？六颗星星对应六颗天钉？该伏笔即将回收？<div class='sample-body'>已吓哭！又是被原神大纲和编剧吓哭了的一次（） 鹤观 原神7.2版本PV 雷电影 雷电将军 彩蛋 法涅斯 寒天之钉 米哈游 丑角 阿馏</div></li>
+<li>【原神】以防你不知道，牢米已经明示了6个天钉符号的寓意！<div class='sample-body'>“感受圣土化吧……”</div></li>
+<li>各国神明通过天钉试炼的表现，哪个是你的最爱呢？</li>
+<li>提瓦特七国保卫战!七国天钉僭续试炼全剧情合集!【原神7.2版本坏灭肇始之时剧情】<div class='sample-body'>持续更新中</div></li>
+<li>卧槽,钟离说天钉是小事！解决天钉后钟离一人喝起了茶！他早就知道原神的真相！正在望舒客栈去守望全提瓦特的情况！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>【原神/熟肉】怎么你说过就过了啊？！日本主播们看钟离速通天钉试炼，还得是老爷子的出手速度快<div class='sample-body'>麻酔 Masui 主播空间：https://www.youtube.com/@masui99 黒月夜桜 / Yozakura Kurotsuki 主播空间：https://www.youtube.co…</div></li>
+<li>前方爆燃！雷电将军一刀砍爆天钉过场动画！最强硬解决天钉之人！直接震惊众人！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>风之神温迪进入天钉试炼！诠释自由的意义！是神性拉满的温迪大人！！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>钟离出手帅炸！其他几神还在争谁先，帝君就把璃月的天钉危机解除了！还通过温迪把情报传了过来，天哪岩主天星大人！【原神7.2剧情】<div class='sample-body'>天哪岩主天星大人！</div></li>
+</ol>
+<hr>
+<h3>13. <span class='tag tag-ok'>[OK]</span> 普通讨论 温迪</h3>
+<p>信源=正常讨论（黑话实体） | 规模=19 条 (1.9%) | 评分=2.3</p>
+<p><strong>LLM 摘要</strong>：原神7.2至冬主线剧情中温迪相关讨论，集中在七神会议、剧情细节与角色表现，整体为正向剧情讨论。</p>
+<p><strong>LLM 依据</strong>：样本中未出现行动信号或负面密集，内容多为剧情反应、考据和角色互动讨论，无投诉、举报等风险迹象。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>顶级的语言艺术！克苟用一节课的时间带你细品提瓦特七国会议上的人情世故：离女皇越远的关系和至冬越不好！近的相对融洽！你看看这个温迪这个表情这个话术！都是人精啊hh<div class='sample-body'>已获授权 关注克利咕咕兰谢谢喵：https://space.bilibili.com/809048?spm_id_from=333.337.0.0 克利咕咕兰的直播间：https://live.bil…</div></li>
+<li>原神史上最炸裂的会面！七神执政齐聚至冬宫开会！温迪果然是装弱配合女皇表演！那维莱特和众人气氛凝重随后和解合作！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>顶级的文案魅力！不愧是树海的神秘水友！七国会议居然还有这种细节！：假如把游戏画面和语音角色名字都屏蔽掉，只看对话字幕你能区分角色吗？唉嘿！你看到这个只能想到温迪<div class='sample-body'>已获授权 关注树海忆者谢谢喵：https://space.bilibili.com/3546653759899724 树海忆者的直播间：https://live.bilibili.com/324918…</div></li>
+<li>「24人」老外看原神7.2至冬剧情全过场动画反应 reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Thejonathon/pixieebub/Richellyna/Mordex Tryhard/Zeraverso/bysammi/Komemos/atina_…</div></li>
+<li>老外看原神7.2至冬剧情全过场动画反应 七神试炼全帅炸了 reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Thejonathon/pixieebub/상덕/SipSipStefen/Zeraverso/AlexYuki ShiverDoom/Sylvan Gilmo…</div></li>
+<li>老外看原神7.2至冬剧情全过场动画反应 (第2版) reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Vaan_GR/ennieee/Zy0xxx/Komemos/atina_gaming/ Winters Not Live/TheMusicInMe777/ M…</div></li>
+<li>老外看原神7.2剧情水龙王与七神会议反应 史上最炸裂会面！【那维莱特/玛薇卡/纳西妲/温迪/丑角/至冬】<div class='sample-body'>原神7.2剧情 主播： Thejonathon/pixieebub/상덕/SipSipStefen/JaydenHorn1406/AlexYuki ShiverDoom/Sylvan Gilmour …</div></li>
+<li>大纲彻底封神！根本没有吃书！原来早在八年前的原神漫画温妮莎的故事中，就已经曝光过天空岛的内部，以及「原神」的真相？温迪还提到了原初之人的创世神话？<div class='sample-body'>不是？也能埋伏笔！！！大纲这也太神了吧，编剧这是怎么做到的啊！！！ 原神PROJECT漫画 蒙德 初代西风骑士团团长 冰之女皇 原初之人 诺迦法 法涅斯</div></li>
+<li>笑死，女皇亲口认证！温迪被掏神之心真是他与女皇的“表演”？心海超帅高光！直接在七国会议上向冰之女皇发难！有关愚人众在各国造成的危机！凝光也认同？</li>
+<li>风之神温迪进入天钉试炼！诠释自由的意义！是神性拉满的温迪大人！！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+</ol>
+<hr>
+<h3>14. <span class='tag tag-ok'>[OK]</span> 普通讨论 雷电将军</h3>
+<p>信源=正常讨论（黑话实体） | 规模=17 条 (1.7%) | 评分=2.3</p>
+<p><strong>LLM 摘要</strong>：样本内容主要是玩家对雷电将军在原神7.2剧情中高光表现的反应和正面评价，无行动信号或负面情绪。</p>
+<p><strong>LLM 依据</strong>：17条样本中未发现投诉、举报、冲官方、退坑等行动信号，也无真正负面内容，多为赞美、激动或剧情讨论，故判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>「24人」老外看原神7.2至冬剧情全过场动画反应 reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Thejonathon/pixieebub/Richellyna/Mordex Tryhard/Zeraverso/bysammi/Komemos/atina_…</div></li>
+<li>老外看原神7.2至冬剧情全过场动画反应 七神试炼全帅炸了 reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Thejonathon/pixieebub/상덕/SipSipStefen/Zeraverso/AlexYuki ShiverDoom/Sylvan Gilmo…</div></li>
+<li>老外看原神7.2至冬剧情全过场动画反应 (第2版) reaction【钟离/雷电将军/玛薇卡/女皇/温迪/天空岛】<div class='sample-body'>原神7.2至冬主线剧情过场动画 主播： Vaan_GR/ennieee/Zy0xxx/Komemos/atina_gaming/ Winters Not Live/TheMusicInMe777/ M…</div></li>
+<li>前方爆燃！雷电将军一刀砍爆天钉过场动画！最强硬解决天钉之人！直接震惊众人！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>太爆了！树叶二刷原神7.2前瞻PV上头了 钟离雷电将军念念不忘 时隔这么多年 还能看到无想的一刀<div class='sample-body'>喜欢的话记得关注主播哟 迷茫小树叶：https://space.bilibili.com/13221028 直播间：https://live.bilibili.com/814?live_from=86…</div></li>
+<li>卡特亚看雷电将军时隔5年再砍出无想一刀 还能玩周本形态将军惊呆了：还记得当初那一剑让我一晚上涨了4万关注【原神7.2剧情】<div class='sample-body'>卡特亚：https://space.bilibili.com/43222001</div></li>
+<li>太暴力了！3A级别演出！刃性哥哥看原神7.2主线雷电将军复刻“无想一刀”彻底燃爆了！我的超级智慧告诉我要用超级力量了！这回对味儿了</li>
+<li>以防你不知道雷神和心海在开会时偷偷挪椅子</li>
+<li>七国代表登上天空岛！最后天理还是要重置提瓦特！旅行者大怒！谈崩后,雷神直接转头就走！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>【天空岛的愚者】看七神会议，没想到雷神是最尴尬的～</li>
+</ol>
+<hr>
+<h3>15. <span class='tag tag-ok'>[OK]</span> 普通讨论 游戏官方</h3>
+<p>信源=正常讨论（黑话实体） | 规模=20 条 (2.0%) | 评分=2.3</p>
+<p><strong>LLM 摘要</strong>：样本以米哈游/原神内容讨论、梗和剧情解析为主，仅有零星对角色待遇及流水的负面表达，无组织行动。</p>
+<p><strong>LLM 依据</strong>：未发现举报、投诉、冲官方、集体退坑等行动信号；负面样本仅约2条且情绪克制，远低于可能发酵标准，属普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>克苟是真敢说啊！锐平斯露德之死：二次元板块快被米哈游吃完了，自研决战旗舰抄原神抄到关服，领导觉得加个元素反应就能赢，结果328季卡都没人买，受到原神冲击太大了！<div class='sample-body'>已获授权 关注克利咕咕兰谢谢喵：https://space.bilibili.com/809048?spm_id_from=333.337.0.0 克利咕咕兰的直播间：https://live.bil…</div></li>
+<li>米哈游！你告诉我，去7.2新地图到底该走哪条路？<div class='sample-body'>最近嗓子有点哑，见谅</div></li>
+<li>至冬时报玩川普修池子的梗引起外网玩家共鸣，米哈游开发者一定有人经常关注国外新闻!!!</li>
+<li>老米会不会太隐晦了？这小子还是个福瑞控m啊</li>
+<li>什么叫老米自己也会提前剧透了<div class='sample-body'>下版本我还得再来看一次这个逸闻QAQ 有有趣的小知识（小细节）可以私信分享秋名山，非常感谢！！</div></li>
+<li>米哈游你再做这种剧情我就找一车牛来弄你<div class='sample-body'>其实我第一次开火车到至冬堡前面的时候还以为这个巨人就是召唤暴风雪的怪兽</div></li>
+<li>现在已经可以每天薅老米五次羊毛了<div class='sample-body'>如果你在背包有达妮卡茶点的情况下继续领取，会直接无事发生，什么东西都没有，需要领取时请先用掉之前的QAQ 有有趣的小知识（小细节）可以私信分享秋名山，非常感谢！！</div></li>
+<li>被老米的大纲吓哭了，什么叫开服就有的突破材料文案，后续在剧情中一一出现。 #原神创作者激励计划 #原神剧情解析#无神怜爱的雪国 #原神 #原神至冬</li>
+<li><span class='tag tag-neg'>[!]</span> 万字理性解析米哈游是如何给瓦列里的成男恨，以及变成如今状况的原因<div class='sample-body'>本视频观点为我方根据已有线索对比所得，其中论据包括但不限于游戏剧情描述，内鬼爆料相关，社区相关发布内容及评论，我方接受一切有理有据的相关内容讨论，同时也希望各位玩家同好能够理性讨论，我们的本意为记录讨…</div></li>
+<li>克苟：米哈游的游戏玩多了，容易失去对业内游戏平均水平的基础认知【克利咕咕兰】<div class='sample-body'>克利咕咕兰的直播间：https://live.bilibili.com/518647 克利咕咕兰的个人空间：https://space.bilibili.com/809048</div></li>
+</ol>
+<hr>
+<h3>16. <span class='tag tag-ok'>[OK]</span> 普通讨论 如翼之峰</h3>
+<p>信源=高频未登录词 | 规模=18 条 (1.8%) | 评分=2.3</p>
+<p><strong>LLM 摘要</strong>：原神7.2如翼之峰地区攻略向内容合集，涉及宝箱、神瞳、任务、解谜等收集指引，无负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本均为B站攻略视频宣传或指引，未出现投诉、举报、集体退坑等行动信号，负面样本为0，因此为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【原神一条龙全收集】至冬7.2(成就数232/冰神瞳90/摩拉69/影生翼滴15)新基捷城+如翼之峰/宝箱/摩拉堆/玉帛/冰之印/原神7.2一条龙<div class='sample-body'>本视频包含以下任务： 灯光奇异、胜者为王、送面包的好心人、覆于尘与雪、为了更甜美的未来、绿洲旁的美丽假日、酒瓶里的乌云、手中雀胜天上鹤、向肖像借一枚金币、笼兽困斗 宝箱成就总数：232 27个仙灵(2…</div></li>
+<li>【原神7.2一条龙】全宝箱（232）/冰神瞳/任务/影生翼滴/成就//观景点/玉帛/探索度一条龙,至冬/新基捷城/如翼之峰/晶石如林生长之地<div class='sample-body'>原神全道具点位地图:@原神空荧酒馆</div></li>
+<li>原神7.2版本「坏灭肇始之时」新基捷城、如翼之峰地区音乐合集<div class='sample-body'>会赢的</div></li>
+<li>【原神7.2】至冬 带任务版一条龙全收集 成就数232个 新基捷城/如翼之峰/绝境攻练/影生翼滴/地方传奇/商店/影域<div class='sample-body'>分P编号不对，网页端刷新下，手机端退出重进 地图工具：@原神空荧酒馆</div></li>
+<li>【原神7.2】至冬 无任务版一条龙全收集 成就数232个 新基捷城/如翼之峰/绝境攻练/影生翼滴/地方传奇/商店/影域<div class='sample-body'>分P编号不对，网页端刷新下，手机端退出重进 地图工具：@原神空荧酒馆</div></li>
+<li>【原神】豪斗旅纪/厄生古树种/喧闹兽众/太古硬猬兽/地方传奇/新基捷城/如翼之峰/原神7.2/至冬7.2<div class='sample-body'>有帮助的话还请三连支持一下！ 原神最全的攻略导航：https://www.bilibili.com/read/cv13698984</div></li>
+<li>【原神7.2·至冬国带任务一条龙全收集带开图】全宝箱232+冰神瞳90+世界任务+成就+影生翼滴+摩拉+玉帛+地方传奇丨新基捷城、如翼之峰丨晶流与石箱的古歌谣丨</li>
+<li>【原神罗盘无法探测的宝箱】至冬7.2(新基捷城+如翼之峰)冰之寻宝罗盘/搜不到/扫不到/扫不出/至冬/原神7.2<div class='sample-body'>被占用的宝箱也是无法被探测出来的，用罗盘前需清理地图上所有的活动、每日任务、世界任务、魔神任务。并确保2个地脉花周围没有宝箱的存在 长峡深处的晶石城·上：BV1KBxS6DEAC 长峡深处的晶石城·下…</div></li>
+<li>【原神至冬7.2冰神瞳】散失的冰神瞳全收集(新基捷城+如翼之峰)/分区域收集/贴心领跑防迷路/全网最贴心的至冬冰神瞳攻略<div class='sample-body'>230冰神瞳=9级整 捡完一定要记得标记，不然从头再找一圈真的很头疼！ 7.2必做前置任务： 7.2开图主线①：BV1KBxS6DEAC 7.2开图主线②：BV17dxS6uEnC 7.2开图主线③：…</div></li>
+<li>【原神7.2】至冬 单独宝箱全收集 成就数232个 新基捷城/如翼之峰<div class='sample-body'>分P编号不对，网页端刷新下，手机端退出重进</div></li>
+</ol>
+<hr>
+<h3>17. <span class='tag tag-ok'>[OK]</span> 普通讨论 瓦列里</h3>
+<p>信源=高频未登录词 | 规模=17 条 (1.7%) | 评分=2.3</p>
+<p><strong>LLM 摘要</strong>：玩家围绕原神角色瓦列里的星级、元素属性及待遇展开讨论，出现少量对降星和角色不被善待的质疑，但无组织行动或举报投诉。</p>
+<p><strong>LLM 依据</strong>：负面样本为#2、#3、#8，共3条，未达到可能发酵（行动信号+3~4条负面）或高风险（行动信号且负面≥5）阈值；无举报、投诉、冲官方等行动信号，整体以攻略、二创和剧情讨论为主。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【原神】至冬乱象？米提亚眼转楔，瓦列里楔转眼，达妮卡风转雷？另一种可能性？<div class='sample-body'>完整 PPT 见动态，包含本视频的主要观点，欢迎评论区讨论</div></li>
+<li><span class='tag tag-neg'>[!]</span> 瓦列里真的被降星了吗？盘点几个角色的疑点</li>
+<li><span class='tag tag-neg'>[!]</span> 瓦列里你的周边怎么是星之楔呀，降星没通知周边部门吗</li>
+<li>女皇暴怒！军械官倒卖军火被女皇亲自抓包！直言要斩草除根！旅行者亲自检测机械危险性极大！瓦列里巧施妙计送军械官上断头台！【冰宫密令二阶段第三周剧情】</li>
+<li>【原神】军械宫走私大案！瓦列里汉弗莱附体，米提亚这波是想进步了（第九周冰宫密令剧情吐槽）<div class='sample-body'>军械宫越级上报，绕过丑角直捅女皇，瓦列里汉弗莱附体，米提亚这波是真想进步了，至冬这套体制到底有多离谱？</div></li>
+<li>【原神】米提亚+瓦列里综合测评：武器对比+技能解读+圣遗物选择+命座提升！</li>
+<li>《原神》角色预告-「瓦列里：执序之理」<div class='sample-body'>再宏大的战略布局，也需要按照日程一点一滴去执行。 所以请对时间，以及管理时限的人，多多保持敬畏之心。 中文CV： 瓦列里——淦子齐 日文CV： 瓦列里——古川慎 《原神》bilibili服下载地址： …</div></li>
+<li><span class='tag tag-neg'>[!]</span> 万字理性解析米哈游是如何给瓦列里的成男恨，以及变成如今状况的原因<div class='sample-body'>本视频观点为我方根据已有线索对比所得，其中论据包括但不限于游戏剧情描述，内鬼爆料相关，社区相关发布内容及评论，我方接受一切有理有据的相关内容讨论，同时也希望各位玩家同好能够理性讨论，我们的本意为记录讨…</div></li>
+<li>以防你不知道，瓦列里有强迫症啊</li>
+<li>瓦列里评价：直接找达达利亚打一架？你是认真的么</li>
+</ol>
+<hr>
+<h3>18. <span class='tag tag-ok'>[OK]</span> 普通讨论 彩蛋</h3>
+<p>信源=高频未登录词 | 规模=17 条 (1.7%) | 评分=2.3</p>
+<p><strong>LLM 摘要</strong>：该信号主要聚集原神、崩铁等游戏版本彩蛋、剧情细节与角色互动内容，整体为攻略分享和正向评价。</p>
+<p><strong>LLM 依据</strong>：样本中未出现行动信号或负面表达，均为彩蛋展示、攻略和感叹内容，属于常规社区讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>原神的世界一定不止于好，更在于「活」！【细节彩蛋篇·原神】<div class='sample-body'>这一期的后期工作堪称地狱...因为我探索至冬的录像经常是一天五六个小时的，并且录了很多天...需要把这么长的视频分成我想展示的那些片段，剪视频的时候几次干到力竭。我也深刻感受到了长视频的“吃力”这个感…</div></li>
+<li>林鸽找原神7.2版本主线/活动全提瓦特彩蛋 【驰援战域 全域镇卫 逆捍谬罚】分p<div class='sample-body'>林鸽主页https://space.bilibili.com/3546597658987119</div></li>
+<li>99%玩家错过的彩蛋!阿乔趁圣土化夺舍了基尼奇?<div class='sample-body'>原神7.2千星奇域装扮【跃格漫影】推荐+展示，终于能玩到人形阿乔了！</div></li>
+<li>一切默默无闻的细节彩蛋，构成了原神的世界！【细节彩蛋篇·提瓦特世界】<div class='sample-body'>世界一定有你未曾发现的美好，并值得我们为之而战！ 在医院做视频真的太艰难了！（但现在已出院！） 希望有你们的三连告诉我，细腻的态度真的也会吸引同样细腻的我们。 我把这些细小的美好分享与你，希望它能帮你…</div></li>
+<li>7.2版本的一些有趣小彩蛋<div class='sample-body'>好多好多有趣的大料QAQ 有有趣的小知识（小细节）可以私信分享秋名山，非常感谢！！</div></li>
+<li>［原神/至冬彩蛋］沃雅妮莎向桑多涅打听哥伦比娅近况~木偶的回答又开始傲娇啦~｜期待少女回至冬哇！！！<div class='sample-body'>在科洛列夫剧院偶遇木偶和沃雅妮莎啦！这彩蛋太难刷了！</div></li>
+<li>［原神/7.2彩蛋攻略］至冬主线「第六幕」众角色彩蛋攻略剧情合集来啦！快看有没有你错过的！｜坏灭肇始之时<div class='sample-body'>彩蛋视频制作不易，一键三连支持一下up主吧~</div></li>
+<li>原神7.2主线完结后彩蛋！女皇准备找哥伦比娅帮忙！芙宁娜又一次以人类之躯比肩神明！【原神7.2版本坏灭肇始之时主线剧情高光收录】</li>
+<li>原神7.2圣土化防御全角色彩蛋剧情合集｜活动「全域镇卫·逆捍谬罚」</li>
+<li>【原神】7.2漏看的凡人NPC彩蛋合集（须弥篇）：婕德来和我们一起对抗魔物啦！兰百梨迦、斯露莎、迪娜泽黛、兰利遮都来了！</li>
+</ol>
+<hr>
+<hr>
+<h2>五、附录：程序评分说明</h2>
+<p>程序评分为纯规则驱动，在 LLM 之前运行，用于筛选 Top N 高优先级信号送 LLM 精判。最终预警等级由 LLM 的 <code>risk_level</code> 决定（高风险/可能发酵/普通讨论），程序评分不再参与定级。</p>
+<table><tr><th>评分维度</th><th>权重</th><th>依据</th></tr><tr><td>传播速度</td><td>20%</td><td>跨平台数 + 聚类占比</td></tr><tr><td>情绪烈度</td><td>30%</td><td>敏感词/负面词命中数</td></tr><tr><td>行动转化</td><td>30%</td><td>信号词密度（举报/退坑/投诉等）</td></tr><tr><td>长尾风险</td><td>20%</td><td>是否为已知游戏术语 + 跨平台 + 规模</td></tr></table>
+<hr>
+<p><em>本报告由「舆情快速发现 Agent Demo」自动生成。</em></p>
+<p><em>架构：信号发现(规则) -&gt; 程序评分(纯规则) -&gt; LLM精判(DeepSeek) -&gt; 风险定级</em></p>
+  </div>
+
+  <footer>
+    <p>本页为静态示例，由 agent/output 下的日报 Markdown 转换生成，不在浏览器里实时跑 LLM。</p>
+  </footer>
+</body>
+</html>

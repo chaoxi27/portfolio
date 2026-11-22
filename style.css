@@ -637,6 +637,8 @@ a {
 }
 
 .btn-tryout {
+  display: inline-block;
+  text-decoration: none;
   flex-shrink: 0;
   border: 1px solid var(--accent);
   background: var(--accent);

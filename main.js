@@ -131,9 +131,11 @@
       .map((s) => `<p>${esc(s)}</p>`)
       .join("");
 
-    const tryoutBtn = p.tryout
-      ? `<button class="btn-tryout" type="button" data-tryout="${esc(p.id)}">在线试用</button>`
-      : "";
+    const tryoutBtn = p.liveUrl
+      ? `<a class="btn-tryout" href="${esc(p.liveUrl)}" target="_blank" rel="noopener">在线体验</a>`
+      : p.tryout
+        ? `<button class="btn-tryout" type="button" data-tryout="${esc(p.id)}">在线试用</button>`
+        : "";
 
     return `
       <article class="project-card" data-id="${esc(p.id)}">
@@ -183,7 +185,8 @@
 
     cards.forEach((card) => {
       const head = card.querySelector(".project-card-head");
-      head.addEventListener("click", () => {
+      head.addEventListener("click", (e) => {
+        if (e.target.closest(".btn-tryout")) return;
         card.classList.toggle("open");
         syncFloat();
       });

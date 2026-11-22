@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游戏舆情速览 · LLM 日报 · 原神月之六</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .report { max-width: 900px; }
+    .report h1 { font-size: 22px; margin: 0 0 14px; }
+    .report h2 { font-size: 17px; margin: 20px 0 10px; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+    .report h3 { font-size: 15px; margin: 16px 0 8px; }
+    .report p { font-size: 13px; color: #374151; margin: 7px 0; }
+    .report hr { border: none; border-top: 1px solid #e5e7eb; margin: 18px 0; }
+    .report blockquote { background: #f9fafb; border-left: 4px solid #d1d5db; border-radius: 4px; padding: 8px 12px; margin: 10px 0; color: #6b7280; font-size: 13px; }
+    .report table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 13px; }
+    .report th, .report td { border: 1px solid #e5e7eb; padding: 7px 10px; text-align: left; vertical-align: top; }
+    .report th { background: #f9fafb; font-weight: 600; }
+    .report code { background: #f3f4f6; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+    .report ol.sample-list { margin: 8px 0 10px 22px; }
+    .report ol.sample-list li { font-size: 13px; margin: 5px 0; color: #374151; }
+    .report .sample-body { margin: 3px 0 3px 0; padding-left: 12px; border-left: 2px solid #e5e7eb; color: #6b7280; font-size: 12px; }
+    .tag { display: inline-block; font-size: 11px; line-height: 1.4; padding: 0 5px; border-radius: 3px; margin-right: 3px; }
+    .tag-neg { background: #fef2f2; color: #dc2626; }
+    .tag-ok { background: #f0fdf4; color: #16a34a; }
+    .tag-warn { background: #fffbeb; color: #d97706; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>游戏舆情速览 · LLM 日报 · 原神月之六</h1>
+    <p class="subtitle">完整流程「爬取 → 清洗 → 找信号 → 评分 → LLM 精判 → 定级 → 日报」的最终产出。</p>
+    <a class="guide-link" href="index.html">← 返回工具</a>
+  </header>
+
+  <div class="report panel">
+<h1>舆情预警日报</h1>
+<p><strong>生成时间</strong>：2026-11-22 16:17:21</p>
+<p><strong>数据来源</strong>：原神月之六(网页信号)</p>
+<p><strong>数据规模</strong>：4929 条帖子（去重清洗后）</p>
+<p><strong>LLM 状态</strong>：<span class='tag tag-ok'>[OK]</span> 可用</p>
+<hr>
+<h2>速览简报</h2>
+<blockquote>本次未发现需关注的舆情信号。</blockquote>
+<h3>LLM 判安全，无需关注（共 18 组，速览列前 5）</h3>
+<table><tr><th>实体</th><th>程序评分</th><th>LLM 判断</th></tr><tr><td>莉奈娅</td><td>7.4</td><td>莉奈娅相关讨论集中在角色攻略、强度、养成和抽取建议，标题党较多但无实质负面或行动信号。</td></tr><tr><td>版本前瞻节目</td><td>4.2</td><td>版本前瞻节目相关讨论，内容以信息汇总、兑换码、新内容解析为主，整体情绪中性偏正面。</td></tr><tr><td>游戏官方</td><td>4.2</td><td>样本以对米哈游新地图、角色、PV等内容的夸赞和玩梗为主，仅1条明确抱怨剧情无聊，无行动信号。</td></tr><tr><td>幽境危战</td><td>4.0</td><td>幽境危战话题以攻略、配队和通关展示为主，少量玩家反馈数值膨胀和通关难度偏高，未出现行动号召。</td></tr><tr><td>麓阳书院</td><td>3.9</td><td>麓阳书院相关讨论以攻略、摄影、探索分享为主，整体氛围积极或中性，无组织负面或行动信号。</td></tr></table>
+<hr>
+<h2>一、数据概览</h2>
+<table><tr><th>指标</th><th>数值</th></tr><tr><td>处理帖子总数</td><td>4929</td></tr><tr><td>信号组总数</td><td>18</td></tr><tr><td>高优先级(敏感词/负面)</td><td>1 组</td></tr><tr><td>跨平台信号</td><td>18 组</td></tr><tr><td>含敏感词</td><td>0 组</td></tr><tr><td>送 LLM 精判</td><td>18 组</td></tr></table>
+<h3>LLM 风险等级分布</h3>
+<table><tr><th>等级</th><th>数量</th></tr><tr><td><span class='tag tag-neg'>[!]</span> 高风险</td><td>0</td></tr><tr><td><span class='tag tag-warn'>[~]</span> 可能发酵</td><td>0</td></tr><tr><td><span class='tag tag-ok'>[OK]</span> 普通讨论</td><td>18</td></tr><tr><td>未评估</td><td>0</td></tr></table>
+<h3>预警等级分布</h3>
+<table><tr><th>预警</th><th>数量</th></tr><tr><td>[RED] 红色预警</td><td>0</td></tr><tr><td>[ORANGE] 橙色预警</td><td>0</td></tr><tr><td>[YELLOW] 黄色预警</td><td>0</td></tr><tr><td>[BLUE] 蓝色</td><td>18</td></tr></table>
+<hr>
+<h2>二、需关注信号详情</h2>
+<blockquote>本次未发现需关注的舆情信号。</blockquote>
+<hr>
+<h2>三、LLM 精判聚类详情</h2>
+<p>以下为送 LLM 精判的所有信号，含完整 LLM 评估结果和样本标注。</p>
+<h3>1. <span class='tag tag-ok'>[OK]</span> 普通讨论 莉奈娅</h3>
+<p>信源=负面情绪+实体共现 + 未登录词 | 规模=1056 条 (21.4%) | 评分=7.4</p>
+<p><strong>LLM 摘要</strong>：莉奈娅相关讨论集中在角色攻略、强度、养成和抽取建议，标题党较多但无实质负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本未出现举报、投诉、冲官方、集体退坑等行动信号，也无明显密集负面；标题党内容不计入负面，故为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>莉奈娅圣遗物准备的差不多了！</li>
+<li>莉奈娅离大毕业只差一个不歪的杯子了！</li>
+<li>这莉奈娅和恰斯卡首日流水差距有点大</li>
+<li>莉奈娅全武器推荐！4星都是坑？要抽专武吗?</li>
+<li>莉奈娅当前最强版本答案！莉奈娅T0摆烂队！</li>
+<li>【莉奈娅0命角色评测】果然和预料的毫无差别</li>
+<li>原神回坑要不要抽莉奈娅啊🤔</li>
+<li>莉奈娅武器到底怎么选？4星全是坑？要抽专武吗？<div class='sample-body'>莉奈娅全武器选择优先级+三星四星五星武器推荐+专武 霜结的誓金枝 抽取建议。</div></li>
+<li>吓哭了！原神莉奈娅流水彻底杀疯了！三点仅半波就轻松某逆战冲进总榜前六、游戏榜前三！日服总榜前12、游戏榜前四！这就是所谓肯定没人抽嘛？<div class='sample-body'>吓哭了，这才半波啊！空月之歌版本的原天帝太恐怖了（）</div></li>
+<li>莉奈娅 别养错了！武器/圣遗物/手法 保姆级养成攻略！避免踩坑！</li>
+</ol>
+<hr>
+<h3>2. <span class='tag tag-ok'>[OK]</span> 普通讨论 版本前瞻节目</h3>
+<p>信源=正常讨论（黑话实体） | 规模=143 条 (2.9%) | 评分=4.2</p>
+<p><strong>LLM 摘要</strong>：版本前瞻节目相关讨论，内容以信息汇总、兑换码、新内容解析为主，整体情绪中性偏正面。</p>
+<p><strong>LLM 依据</strong>：20条样本均为版本前瞻内容整理或介绍，未出现负面态度、投诉举报、集体行动等风险信号，因此判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>月之六前瞻内容相当炸裂！画饼填坑一气呵成！直奔空之执政老窝！ 月结晶战舰的最后一块拼图也终于来了！</li>
+<li>原神「月之六」版本日历及前瞻总结</li>
+<li>原神前瞻｜枫丹混池❗️月之六前瞻信息汇总</li>
+<li>月之六前瞻总结！莉奈娅技能解析！</li>
+<li>原神「月之六」前瞻兑换码+汇总</li>
+<li>原神月之六前瞻汇报+兑换码（混池/新地图</li>
+<li>月之六前瞻｜枫丹混池、荆夫港、空之神殿</li>
+<li>月之六前瞻千星新套装一览</li>
+<li>月之六前瞻直播总结</li>
+<li>原神月之六300原石前瞻兑换码❗</li>
+</ol>
+<hr>
+<h3>3. <span class='tag tag-ok'>[OK]</span> 普通讨论 游戏官方</h3>
+<p>信源=正常讨论（黑话实体） | 规模=37 条 (0.8%) | 评分=4.2</p>
+<p><strong>LLM 摘要</strong>：样本以对米哈游新地图、角色、PV等内容的夸赞和玩梗为主，仅1条明确抱怨剧情无聊，无行动信号。</p>
+<p><strong>LLM 依据</strong>：负面样本仅1条，无投诉/举报/集体退坑等行动号召，未达可能发酵或高风险标准，属于普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>被老米的画风骗了😭😭</li>
+<li>想看看你们的米哈游“照骗”</li>
+<li>老米的审美从未让人失望过！必须夸夸🌟</li>
+<li>米哈游把最温柔的善意藏进了莉奈娅 PV</li>
+<li>我去老米新地图也太神了</li>
+<li>老米你告诉我这是辅助角色</li>
+<li>老米又偷藏新角色！</li>
+<li>月之六：这个米哈游炫技炫爽了</li>
+<li>米哈游你干得好啊</li>
+<li>老米，谢谢你，又让我见到了我的小龙</li>
+</ol>
+<hr>
+<h3>4. <span class='tag tag-ok'>[OK]</span> 普通讨论 幽境危战</h3>
+<p>信源=高频未登录词 | 规模=31 条 (0.6%) | 评分=4.0</p>
+<p><strong>LLM 摘要</strong>：幽境危战话题以攻略、配队和通关展示为主，少量玩家反馈数值膨胀和通关难度偏高，未出现行动号召。</p>
+<p><strong>LLM 依据</strong>：20条样本中多数为攻略与标题党；明确负面集中在样本6（数值膨胀）和样本18（难度高、配置受限），未发现举报/投诉/冲官方等行动信号，负面不足5条且未密集，因此为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【原神】就这？为什么“不推荐”莉奈娅？别被骗了！这才是真正的0+0莉奈娅！洛恩/尼可莱恩/布伦妮/木偶/桑多涅/兹白/叶洛亚/幽境危战/深境螺旋/幻想真境剧诗<div class='sample-body'>ID最后一个字念：堃（kun） 求关注、求三连感谢～</div></li>
+<li>原神月之六 幽境危战N5 阵容及配队，平民手法，操作稀烂！一看就笑！</li>
+<li>6.5幽境危战配队推荐</li>
+<li>6.6幽境危战</li>
+<li>这期幽境危战能打n6吗，有没有主播接</li>
+<li><span class='tag tag-neg'>[!]</span> 【原神】6.5幽境危战又一次大膨胀来了</li>
+<li>莉奈娅让兹白起飞！全0+0月结晶队间均60秒速通幽境危战难度5</li>
+<li>【原神】爆肝3天～全网最准！6.5月之六100%探索能拿多少原石？莉奈娅/洛恩/尼可莱恩/布伦妮/木偶/桑多涅/兹白/空之神殿/幽境危战/深境螺旋/幻想真境剧诗<div class='sample-body'>ID最后一个字念：堃（kun） 求关注、求三连感谢～</div></li>
+<li>有了莉奈娅后，月结晶诺艾尔直接起飞！幽境危战实战展示！【创作体验服】</li>
+<li>【原神】4月大事件～6.6月之七立绘公布！洛恩？尼可？全新风系萝莉！再送免费五星！荆夫港来袭！空之神殿开启！史上最难幽境危战！木偶/桑多涅/尼可莱恩/莉奈娅<div class='sample-body'>ID最后一个字念：堃（kun） 求关注、求三连感谢～</div></li>
+</ol>
+<hr>
+<h3>5. <span class='tag tag-ok'>[OK]</span> 普通讨论 麓阳书院</h3>
+<p>信源=高频未登录词 | 规模=37 条 (0.8%) | 评分=3.9</p>
+<p><strong>LLM 摘要</strong>：麓阳书院相关讨论以攻略、摄影、探索分享为主，整体氛围积极或中性，无组织负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本中未出现举报、投诉、冲官方等行动信号，负面情绪样本极少或不存在，总帖数37但仅为游戏内容讨论，不构成风险。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>[原神月之六]我不会是第一个卡死在麓阳书院的吧</li>
+<li>【原神月之六空之神殿•麓阳书院】</li>
+<li>我现在就要玩麓阳书院</li>
+<li>麓阳书院的狩野面前宝箱</li>
+<li>麓阳书院这里不对吧</li>
+<li>麓阳书院仙鹤宝箱解锁全流程</li>
+<li>以防你不知道做完任务麓阳书院有多美</li>
+<li>麓阳书院 | 空之神殿 | 疗养院 | 大方广</li>
+<li>原神求助，麓阳书院这个宝箱在哪吗</li>
+<li>尤其是麓阳书院</li>
+</ol>
+<hr>
+<h3>6. <span class='tag tag-ok'>[OK]</span> 普通讨论 传说任务</h3>
+<p>信源=正常讨论（黑话实体） | 规模=85 条 (1.7%) | 评分=3.8</p>
+<p><strong>LLM 摘要</strong>：围绕莉奈娅传说任务的攻略、观后感、截图、接单等内容，整体为正面或中性讨论，无负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本中无行动信号，负面样本为0条，未达到风险升级条件，属于普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>浅谈原神莉奈娅传说任务，鸣潮和幸存者偏差<div class='sample-body'>求关注喵</div></li>
+<li>莉奈娅传说任务（四）</li>
+<li>接接接，满探送莉奈娅传说任务!</li>
+<li>莉奈娅传说任务</li>
+<li>最快通过莉奈娅传说任务的方法！</li>
+<li>莉奈娅传说任务写的好扎实</li>
+<li>碎碎念式莉奈娅传说任务观后感</li>
+<li>莉奈娅传说任务对战刻莱诺攻略</li>
+<li>原神莉奈娅传说任务最终决战</li>
+<li>莉奈娅传说任务-飞向归羽声，自存截图</li>
+</ol>
+<hr>
+<h3>7. <span class='tag tag-ok'>[OK]</span> 普通讨论 月结晶队</h3>
+<p>信源=正常讨论（黑话实体） | 规模=68 条 (1.4%) | 评分=3.8</p>
+<p><strong>LLM 摘要</strong>：样本均为月结晶队配队、伤害测试、抽取建议等常规讨论，未见负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：未发现投诉、举报、集体退坑等行动信号，也无明确负面样本，属于正常游戏内容讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>月结晶队伍第四人而言</li>
+<li>萌新可以只入手一个莉奈娅组个月结晶队吗</li>
+<li>月结晶队伍咋配？圣遗物怎么带？</li>
+<li>原神「莉奈娅」一图流❗月结晶队无脑入</li>
+<li>月结晶队能够踢了叶洛亚吗</li>
+<li>莉奈娅月结晶队伍最快出伤手法！</li>
+<li>莉奈娅养好了，月结晶队凑齐了</li>
+<li>平民全员0+0完全体月结晶队的真实伤害</li>
+<li>莉奈娅让兹白起飞！全0+0月结晶队间均60秒速通幽境危战难度5</li>
+<li>【原神】平民全员0+0完全体月结晶队的真实伤害，被完全体月结晶队吓哭了！<div class='sample-body'>纳塔锻造武器没有造就带了黎明神剑</div></li>
+</ol>
+<hr>
+<h3>8. <span class='tag tag-ok'>[OK]</span> 普通讨论 荆夫港</h3>
+<p>信源=高频未登录词 | 规模=65 条 (1.3%) | 评分=3.8</p>
+<p><strong>LLM 摘要</strong>：样本均为原神6.5新地图荆夫港及空之神殿的攻略、前瞻、点位整理、摄影等内容，无负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本全部围绕地图探索和资讯分享，未出现投诉、举报、集体退坑等行动信号，也无明显负面情绪，属于普通游戏内容讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【原神月之六】荆夫港地图更新前后对比，更新前后差距真的好大啊！</li>
+<li>原神6.5｜荆夫港和空之神殿全部重要点位📌</li>
+<li>月之六前瞻｜枫丹混池、荆夫港、空之神殿</li>
+<li>原神荆夫港主线空之神殿解谜</li>
+<li>6.5月之六前瞻汇总！空之神殿荆夫港！</li>
+<li>原神月之六地图荆夫港与空之神殿</li>
+<li>6.5新地图荆夫港+空之神殿，可以预约啦</li>
+<li>原神月之六前瞻PV！荆夫港+空之神殿！！！</li>
+<li>蛙趣！是蒙德！是荆夫港！</li>
+<li>蒙德荆夫港越来越小了，爆料</li>
+</ol>
+<hr>
+<h3>9. <span class='tag tag-ok'>[OK]</span> 普通讨论 山中好长日</h3>
+<p>信源=高频未登录词 | 规模=60 条 (1.2%) | 评分=3.6</p>
+<p><strong>LLM 摘要</strong>：样本均为《原神》任务「山中好长日」的攻略、时长统计、剧情分析与感想，无负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：20条标题中无投诉、举报、集体退坑等行动信号，负面样本数为0，讨论属正常游戏内容体验。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>空之神殿 任务《山中好长日》①</li>
+<li>月之六开图主线「山中好长日」时长统计</li>
+<li>做完山中好长日我现在是世界上最空虚的人</li>
+<li>原神·山中好长日——忧郁症与精神分析</li>
+<li>【原神6.5】山中好长日1：天堂，赝作古典</li>
+<li>山中好长日的训诂学分析</li>
+<li>抛开地图不谈，山中好长日的文案同样杀疯了</li>
+<li>【原神6.5】山中好长日3：审判，最后的审判</li>
+<li>月之六支线-山中好长日</li>
+<li>原神 6.5「山中好长日」：被温柔读懂的抑郁</li>
+</ol>
+<hr>
+<h3>10. <span class='tag tag-ok'>[OK]</span> 普通讨论 兹白</h3>
+<p>信源=正常讨论（黑话实体） | 规模=42 条 (0.9%) | 评分=3.6</p>
+<p><strong>LLM 摘要</strong>：社区讨论集中在莉奈娅与兹白的搭配、售后强度及无兹白是否抽取，多为攻略向和玩梗内容。</p>
+<p><strong>LLM 依据</strong>：样本中无行动信号，也未出现明确负面情绪，为正常游戏角色讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【原神】就这？为什么“不推荐”莉奈娅？别被骗了！这才是真正的0+0莉奈娅！洛恩/尼可莱恩/布伦妮/木偶/桑多涅/兹白/叶洛亚/幽境危战/深境螺旋/幻想真境剧诗<div class='sample-body'>ID最后一个字念：堃（kun） 求关注、求三连感谢～</div></li>
+<li>没兹白的莉奈娅就业难？那就自己当老板！</li>
+<li>没有兹白能抽莉奈娅吗</li>
+<li>没有兹白啊</li>
+<li>没有兹白和少女，抽不抽莉奈娅</li>
+<li>莉奈娅 对兹白的提升有多大？平民0命实测！</li>
+<li>没抽兹白就能跳过莉奈娅？</li>
+<li>没抽兹白的玩家，抽莉也能自己C</li>
+<li>【原神6.5】莉奈娅 前瞻攻略！兹白售后</li>
+<li>无兹白推荐抽莉奈娅吗</li>
+</ol>
+<hr>
+<h3>11. <span class='tag tag-ok'>[OK]</span> 普通讨论 空月之歌</h3>
+<p>信源=高频未登录词 | 规模=33 条 (0.7%) | 评分=3.6</p>
+<p><strong>LLM 摘要</strong>：该信号主要围绕原神6.5版本&#x27;空月之歌&#x27;的资讯、前瞻兑换码、剧情攻略与二创反应，整体为中性或正面内容。</p>
+<p><strong>LLM 依据</strong>：样本均为版本内容分享、攻略和剧情讨论，未发现举报、投诉、冲官方等行动信号，也无明显负面情绪，属于普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>老资历锐评钟离和创龙点睛，NPC随口一句背后都是一个版本！空月之歌教你如何填坑，空之神殿NPC介绍（二）【原神观测枢】<div class='sample-body'>©米哈游版权所有 视频内图片素材与背景音乐取自游戏《原神》，相关素材的权力归米哈游所有，相关权力、利益归各自所有者享有。</div></li>
+<li>原神空月之歌『月之六』前瞻兑换码</li>
+<li>阿帽空月之歌打完架还需要回须弥补论文吗</li>
+<li>看来空月之歌要结束了…怎么没有至冬情报！</li>
+<li>原神6.5版本空月之歌·旋舞更新内容总结</li>
+<li>🎬 原神6.5「月之六·空月之歌·变奏」前瞻直播</li>
+<li>原神空月之歌6.5版本前瞻兑换码</li>
+<li>【原神·空月之歌】月之六版本完结</li>
+<li>空月之歌你就这样一直从头夯到尾</li>
+<li>…好一个空月之歌</li>
+</ol>
+<hr>
+<h3>12. <span class='tag tag-ok'>[OK]</span> 普通讨论 钟离</h3>
+<p>信源=正常讨论（黑话实体） | 规模=11 条 (0.2%) | 评分=3.4</p>
+<p><strong>LLM 摘要</strong>：钟离相关讨论集中在剧情解析、攻略和玩梗，未发现负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本中未见投诉、举报、冲官方等行动信号，也无明显负面情绪，整体为正常角色讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>老资历锐评钟离和创龙点睛，NPC随口一句背后都是一个版本！空月之歌教你如何填坑，空之神殿NPC介绍（二）【原神观测枢】<div class='sample-body'>©米哈游版权所有 视频内图片素材与背景音乐取自游戏《原神》，相关素材的权力归米哈游所有，相关权力、利益归各自所有者享有。</div></li>
+<li>原：放个钟离的料在大地图，什么都不说</li>
+<li>至冬国亮相？钟离身份还有说法？</li>
+<li>了解钟离越多，了解钟离越少</li>
+<li>原神新地图隐藏剧情：钟离跳钢管舞</li>
+<li>或许是钟离与天理有关的又一力证？</li>
+<li>【原神/熟肉】莉奈娅采矿也太方便了吧！钟离可以退休了！这锤子有力气！<div class='sample-body'>这锤子有力气哇 喜欢的话点个关注吧！ 有错误还望多多指正！ 剪/翻/轴：词条不要库库歪啊（已授权） 主播：麻酔 Masui 油管频道：https://www.youtube.com/@masui99 …</div></li>
+<li>莉奈娅能否加入钟离月共鸣队？新队伍钟离该用什么圣遗物？莉莉能否再让月共鸣上一层楼？用上千条数据带你了解！<div class='sample-body'>数据表格地址：https://docs.qq.com/sheet/DU0JoRkF0eFViR25j?tab=000028 感谢@信条长明 以及@朱玛 的计算协作 原本想着卡池一开就发的，结果数据实在…</div></li>
+<li>原神剧情up天空岛的愚者看空之神殿任务推断钟离对天理的理解很先进有称帝之志：等天下有变我就一个潜龙出山自立为王<div class='sample-body'>天空岛的愚者：https://space.bilibili.com/173323339</div></li>
+<li>帝君杀上空之神殿</li>
+</ol>
+<hr>
+<h3>13. <span class='tag tag-ok'>[OK]</span> 普通讨论 风息山</h3>
+<p>信源=高频未登录词 | 规模=46 条 (0.9%) | 评分=3.4</p>
+<p><strong>LLM 摘要</strong>：风息山相关讨论集中在新地图探索攻略、全收集路线和代肝服务展示，整体为正常内容输出。</p>
+<p><strong>LLM 依据</strong>：20条样本均为攻略、探索进度或代肝完单展示，未发现投诉、举报、集体退坑等行动信号，也无明确负面情绪，属于普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>风息山！荆夫港！空之神殿！</li>
+<li>空之神殿、风息山百分百探索已满</li>
+<li>完单截图：风息山+空之神殿全宝箱满探索✅</li>
+<li>空之神殿、荆夫港和风息山。</li>
+<li>新地图「风息山」已探索完毕✅</li>
+<li>风息山满了</li>
+<li>空之神殿+风息山</li>
+<li>原神新地图6.5风息山、空之神殿全包</li>
+<li>原神月之六6.5「风息山+空之神殿」探索</li>
+<li>原神6.5风息山/空之神殿全宝箱/任务一条龙</li>
+</ol>
+<hr>
+<h3>14. <span class='tag tag-ok'>[OK]</span> 普通讨论 空之执政</h3>
+<p>信源=高频未登录词 | 规模=29 条 (0.6%) | 评分=3.4</p>
+<p><strong>LLM 摘要</strong>：空之执政相关前瞻内容讨论，玩家对新地图、剧情和角色表现出兴趣与期待，无负面或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本均为新版本前瞻内容讨论，整体情绪正面或中性，未出现负面样本、投诉或行动号召，因此判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>月之六前瞻内容相当炸裂！画饼填坑一气呵成！直奔空之执政老窝！ 月结晶战舰的最后一块拼图也终于来了！</li>
+<li>震惊！空之执政竟是原壶大佬！</li>
+<li>什么？我们可以去空之执政的藏馆了？</li>
+<li>下版本竟然去空之执政的空之神殿也太好看了</li>
+<li>老外看原神6.5前瞻PV惊现空之执政 全体傻眼</li>
+<li>【原神】空之执政以双子形象制造守护者！</li>
+<li>原神新boss就是内涵空荧？空之执政的爱好？</li>
+<li>想不到你是这样的空之执政！</li>
+<li>空之执政</li>
+<li>提瓦特世界的真相已明！空之执政追随反主？</li>
+</ol>
+<hr>
+<h3>15. <span class='tag tag-ok'>[OK]</span> 普通讨论 露米</h3>
+<p>信源=高频未登录词 | 规模=27 条 (0.5%) | 评分=3.4</p>
+<p><strong>LLM 摘要</strong>：露米相关讨论以角色萌点、技能强度和二创为主，未出现负面舆情或行动信号。</p>
+<p><strong>LLM 依据</strong>：样本内容均为正面或中性讨论，无负面样本和行动信号，因此为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>露米变成了大露米，差点一锤子把对面砸扁【原神6.5剧情过场动画】</li>
+<li>露米大馋小子莉奈娅的月之轮都吃</li>
+<li>莉奈娅的露米居然还能这样用</li>
+<li>原神莉奈娅露米钩织成品（图解来了）呀吼—</li>
+<li>莉奈娅和露米拼豆图纸</li>
+<li>莉奈娅和她的露米</li>
+<li>莉奈娅的露米也太超标了</li>
+<li>露米！你再表演一下那个！</li>
+<li>莉奈娅无法喂饱露米！恐怖霜精吞食一切！</li>
+<li>莉奈娅真的好宠露米</li>
+</ol>
+<hr>
+<h3>16. <span class='tag tag-ok'>[OK]</span> 普通讨论 尼可</h3>
+<p>信源=正常讨论（黑话实体） | 规模=26 条 (0.5%) | 评分=3.4</p>
+<p><strong>LLM 摘要</strong>：围绕原神角色尼可的抽卡、强度、剧情等讨论，少数玩家表达强度不满或认为被运营做局，但整体以资讯、二创与抽卡咨询为主，无组织行动或集中负面情绪。</p>
+<p><strong>LLM 依据</strong>：样本中明确负面仅编号8和13两条，未出现举报、投诉、冲官方、集体退坑等行动信号，负面数量远低于可能发酵和高风险阈值，因此判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>【原神】就这？为什么“不推荐”莉奈娅？别被骗了！这才是真正的0+0莉奈娅！洛恩/尼可莱恩/布伦妮/木偶/桑多涅/兹白/叶洛亚/幽境危战/深境螺旋/幻想真境剧诗<div class='sample-body'>ID最后一个字念：堃（kun） 求关注、求三连感谢～</div></li>
+<li>「GI 6.6」尼可相关情报</li>
+<li>抽莉奈娅还是等尼可!</li>
+<li>莉奈娅和尼可怎么选</li>
+<li>还要抽莉奈娅和尼可都是xp好难抉择</li>
+<li>这样是捕获明光了吗🤔😭抽尼可肯定不歪？</li>
+<li>本来一直纠结莉奈娅还是尼可</li>
+<li><span class='tag tag-neg'>[!]</span> 尼可大人，我们被米哈游做局了呀</li>
+<li>感觉尼可人妻感好重</li>
+<li>原神6.6卡池大反转！尼可洛恩命座加强！</li>
+</ol>
+<hr>
+<h3>17. <span class='tag tag-ok'>[OK]</span> 普通讨论 温迪</h3>
+<p>信源=正常讨论（黑话实体） | 规模=16 条 (0.3%) | 评分=3.2</p>
+<p><strong>LLM 摘要</strong>：围绕原神新版本空之神殿、风神像传送等玩法与剧情展开的讨论，整体为内容分享、剧情猜测和玩梗，无明显负面情绪。</p>
+<p><strong>LLM 依据</strong>：样本中无投诉、举报、集体行动等信号，也无负面密集表达，均为对地图、任务和角色相关内容的普通讨论或正向分享。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>这简直就是赛博温迪印象服</li>
+<li>空之神殿在北，温迪却叫我们往南</li>
+<li>原神新版本有关于温迪的东西吗</li>
+<li>温迪要牺牲自己送我们上空之神殿？</li>
+<li>【原神】2000天！真的要完结了！月之六空之神殿地图先行探索，带你搞定所有小机关！|蒙德/阿斯莫代/空之执政/空荧/旅行者/风神/温迪/荆夫港<div class='sample-body'>新地图好壮观，技术力又up了！ 创作不易，求 点赞+投币+收藏+转发 ：） 喜欢还望点个【关注】，谢谢啦！这对我很有帮助！</div></li>
+<li>芭芭拉不信温迪就是风神，父母离婚了一家人还在同居</li>
+<li>克苟初探空之神殿：温迪这人啊！最精了！小手一指旅行者多绕五年多弯路！这么大一座浮空建筑就在蒙德上空啊？？<div class='sample-body'>已获授权 关注克利咕咕兰谢谢喵：https://space.bilibili.com/809048?spm_id_from=333.337.0.0 克利咕咕兰的直播间：https://live.bil…</div></li>
+<li>迟早笑死在塔利雅和芭芭拉父亲西蒙做告解这段里，温迪输赢都奖励自己纯瘾大</li>
+<li>预言家刀了，去天空岛真的要靠风神像</li>
+<li>当你在新地图被风神像传送后...</li>
+</ol>
+<hr>
+<h3>18. <span class='tag tag-ok'>[OK]</span> 普通讨论 妖精</h3>
+<p>信源=高频未登录词 | 规模=23 条 (0.5%) | 评分=3.2</p>
+<p><strong>LLM 摘要</strong>：该信号围绕原神角色“妖精”莉奈娅及其相关妖精角色展开，内容为角色定位、外观、壁纸、剧情考据和二创讨论，整体氛围正面或中性。</p>
+<p><strong>LLM 依据</strong>：样本中未出现负面言论、行动信号或组织化投诉迹象，均为角色喜爱、资讯分享和剧情讨论，因此判定为普通讨论。</p>
+<p><strong>样本</strong>（<span class='tag tag-neg'>[!]</span>=LLM判负面）：</p>
+<ol class='sample-list'>
+<li>原神：妖精成女定位曝光，6.6三个新角色上</li>
+<li>妖精的小孩</li>
+<li>玄学抽卡【莉奈娅 原神6.5】雪国妖精Linnea</li>
+<li>妖精对金属的两极分化！莉奈娅 vs 菲林斯</li>
+<li>真的好喜欢这一老一小俩妖精</li>
+<li>妖精换生灵的目的是什么？</li>
+<li>320｜🧚妖精学者莉奈娅｜原神壁纸</li>
+<li>当粉色妖精莉奈娅上线时</li>
+<li>日安～可爱的妖精小姐</li>
+<li>这妖精元素含量有点太高了</li>
+</ol>
+<hr>
+<hr>
+<h2>五、附录：程序评分说明</h2>
+<p>程序评分为纯规则驱动，在 LLM 之前运行，用于筛选 Top N 高优先级信号送 LLM 精判。最终预警等级由 LLM 的 <code>risk_level</code> 决定（高风险/可能发酵/普通讨论），程序评分不再参与定级。</p>
+<table><tr><th>评分维度</th><th>权重</th><th>依据</th></tr><tr><td>传播速度</td><td>20%</td><td>跨平台数 + 聚类占比</td></tr><tr><td>情绪烈度</td><td>30%</td><td>敏感词/负面词命中数</td></tr><tr><td>行动转化</td><td>30%</td><td>信号词密度（举报/退坑/投诉等）</td></tr><tr><td>长尾风险</td><td>20%</td><td>是否为已知游戏术语 + 跨平台 + 规模</td></tr></table>
+<hr>
+<p><em>本报告由「舆情快速发现 Agent Demo」自动生成。</em></p>
+<p><em>架构：信号发现(规则) -&gt; 程序评分(纯规则) -&gt; LLM精判(DeepSeek) -&gt; 风险定级</em></p>
+  </div>
+
+  <footer>
+    <p>本页为静态示例，由 agent/output 下的日报 Markdown 转换生成，不在浏览器里实时跑 LLM。</p>
+  </footer>
+</body>
+</html>
